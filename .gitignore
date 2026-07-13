@@ -1,0 +1,36 @@
+# Raw or downloaded data
+data/raw/**
+!data/raw/README.md
+!data/raw/finngen/
+!data/raw/finngen/outcome_files.csv
+*.gz
+*.tar
+
+# R and Python state
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# LaTeX build outputs
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local validation outputs
+validation/python_reanalysis/

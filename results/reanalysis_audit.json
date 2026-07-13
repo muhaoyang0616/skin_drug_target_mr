@@ -1,0 +1,201 @@
+{
+  "analysis": "single-SNP lead cis-eQTL Wald-ratio MR",
+  "thresholds": {
+    "primary_p": 5e-08,
+    "exploratory_relaxed_p": 1e-05,
+    "minimum_f_statistic": 10.0,
+    "lead_variant_tie_break": "lowest variant_id after p-value ordering",
+    "multiple_testing": "BH separately within primary and exploratory families"
+  },
+  "input_files": [
+    {
+      "path": "data/raw/gtex/GTEx_Analysis_v8_eQTL/Skin_Not_Sun_Exposed_Suprapubic.v8.signif_variant_gene_pairs.txt.gz",
+      "bytes": 57020311,
+      "modified_ns": 1512420082000000000
+    },
+    {
+      "path": "data/raw/gtex/GTEx_Analysis_v8_eQTL/Skin_Sun_Exposed_Lower_leg.v8.signif_variant_gene_pairs.txt.gz",
+      "bytes": 69800211,
+      "modified_ns": 1512420082000000000
+    },
+    {
+      "path": "data/raw/gtex/GTEx_Analysis_v8_eQTL/Whole_Blood.v8.signif_variant_gene_pairs.txt.gz",
+      "bytes": 52420363,
+      "modified_ns": 1512420084000000000
+    },
+    {
+      "path": "data/raw/finngen/outcomes/finngen_R13_L12_ALOPECAREATA.gz",
+      "bytes": 790168677,
+      "modified_ns": 1782926575118904500
+    },
+    {
+      "path": "data/raw/finngen/outcomes/finngen_R13_L12_DERMATITISECZEMA.gz",
+      "bytes": 809908076,
+      "modified_ns": 1782926807299119800
+    },
+    {
+      "path": "data/raw/finngen/outcomes/finngen_R13_L12_PSORIASIS.gz",
+      "bytes": 805114374,
+      "modified_ns": 1782926997063182900
+    },
+    {
+      "path": "data/raw/finngen/outcomes/finngen_R13_L12_VITILIGO.gz",
+      "bytes": 777937418,
+      "modified_ns": 1782927111132276600
+    }
+  ],
+  "gtex_rows_scanned": {
+    "Skin_Not_Sun_Exposed_Suprapubic": 2697337,
+    "Skin_Sun_Exposed_Lower_leg": 3244342,
+    "Whole_Blood": 2414653
+  },
+  "finngen_rows_scanned": {
+    "alopecia_areata": 21326756,
+    "atopic_dermatitis": 21327043,
+    "psoriasis": 21326982,
+    "vitiligo": 21326575
+  },
+  "target_gene_tissue_cells": 57,
+  "primary_instrument_cells": 18,
+  "exploratory_relaxed_only_cells": 5,
+  "cells_with_any_p_lt_1e5_instrument": 23,
+  "primary_mr_rows": 68,
+  "primary_missing_outcome_matches": [
+    {
+      "target_gene": "PDE4A",
+      "tissue": "Whole_Blood",
+      "variant_id": "chr19_10432131_G_A_b38",
+      "outcome": "alopecia_areata",
+      "endpoint": "L12_ALOPECAREATA"
+    },
+    {
+      "target_gene": "PDE4A",
+      "tissue": "Whole_Blood",
+      "variant_id": "chr19_10432131_G_A_b38",
+      "outcome": "atopic_dermatitis",
+      "endpoint": "L12_DERMATITISECZEMA"
+    },
+    {
+      "target_gene": "PDE4A",
+      "tissue": "Whole_Blood",
+      "variant_id": "chr19_10432131_G_A_b38",
+      "outcome": "psoriasis",
+      "endpoint": "L12_PSORIASIS"
+    },
+    {
+      "target_gene": "PDE4A",
+      "tissue": "Whole_Blood",
+      "variant_id": "chr19_10432131_G_A_b38",
+      "outcome": "vitiligo",
+      "endpoint": "L12_VITILIGO"
+    }
+  ],
+  "exploratory_mr_rows": 20,
+  "exploratory_missing_outcome_matches": [],
+  "saved_68_comparison": {
+    "saved_source": "results\\mr_all_results.csv",
+    "saved_rows": 68,
+    "reproduced_rows": 68,
+    "matched_rows": 68,
+    "only_reproduced": 0,
+    "only_saved": 0,
+    "max_abs_errors": {
+      "beta_abs_error": 6.661338147750939e-16,
+      "se_abs_error": 5.551115123125783e-16,
+      "p_abs_error": 5.551115123125783e-16,
+      "fdr_abs_error": 8.881784197001252e-16
+    }
+  },
+  "primary_fdr_hits": [
+    {
+      "target_gene": "TYK2",
+      "tissue": "Skin_Not_Sun_Exposed_Suprapubic",
+      "outcome": "psoriasis",
+      "OR": 0.6039147707490536,
+      "CI_lower": 0.5095732171342806,
+      "CI_upper": 0.7157225656009591,
+      "p_value": 5.907809366749572e-09,
+      "FDR": 1.3391034564632364e-07
+    },
+    {
+      "target_gene": "TYK2",
+      "tissue": "Skin_Sun_Exposed_Lower_leg",
+      "outcome": "psoriasis",
+      "OR": 0.4544054000524464,
+      "CI_lower": 0.37098411454491426,
+      "CI_upper": 0.5565852000162268,
+      "p_value": 2.4971486675903165e-14,
+      "FDR": 1.6980610939614153e-12
+    },
+    {
+      "target_gene": "TYK2",
+      "tissue": "Whole_Blood",
+      "outcome": "psoriasis",
+      "OR": 0.5071231644936147,
+      "CI_lower": 0.4034534434088837,
+      "CI_upper": 0.6374314265187284,
+      "p_value": 5.907809366749528e-09,
+      "FDR": 1.3391034564632364e-07
+    }
+  ],
+  "primary_nominal_hits": [
+    {
+      "target_gene": "JAK1",
+      "tissue": "Whole_Blood",
+      "outcome": "atopic_dermatitis",
+      "OR": 0.8704656011678545,
+      "CI_lower": 0.764823654497381,
+      "CI_upper": 0.9906994355639521,
+      "p_value": 0.03559254479944295,
+      "FDR": 0.48405860927242417
+    },
+    {
+      "target_gene": "CARD14",
+      "tissue": "Whole_Blood",
+      "outcome": "psoriasis",
+      "OR": 1.106006513954913,
+      "CI_lower": 1.0305526568462897,
+      "CI_upper": 1.1869848675700911,
+      "p_value": 0.00519336947316848,
+      "FDR": 0.08828728104386416
+    }
+  ],
+  "full_delta_fdr_hits": [
+    {
+      "target_gene": "TYK2",
+      "tissue": "Skin_Not_Sun_Exposed_Suprapubic",
+      "outcome": "psoriasis",
+      "OR": 0.6039147707490536,
+      "p_full_delta": 3.5021052177702944e-06,
+      "FDR_full_delta": 7.938105160279335e-05
+    },
+    {
+      "target_gene": "TYK2",
+      "tissue": "Skin_Sun_Exposed_Lower_leg",
+      "outcome": "psoriasis",
+      "OR": 0.4544054000524464,
+      "p_full_delta": 4.5535822147164115e-07,
+      "FDR_full_delta": 3.0964359060071596e-05
+    },
+    {
+      "target_gene": "TYK2",
+      "tissue": "Whole_Blood",
+      "outcome": "psoriasis",
+      "OR": 0.5071231644936147,
+      "p_full_delta": 1.806693202365041e-06,
+      "FDR_full_delta": 6.14275688804114e-05
+    }
+  ],
+  "exploratory_relaxed_fdr_hits": [
+    {
+      "target_gene": "PDE4A",
+      "tissue": "Skin_Sun_Exposed_Lower_leg",
+      "outcome": "psoriasis",
+      "OR": 2.83151816912667,
+      "CI_lower": 1.8833217204210941,
+      "CI_upper": 4.257103316528314,
+      "p_value": 5.652362671833091e-07,
+      "FDR": 1.1304725343666182e-05
+    }
+  ]
+}

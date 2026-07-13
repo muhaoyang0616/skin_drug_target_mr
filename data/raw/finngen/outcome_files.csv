@@ -1,0 +1,5 @@
+disease_query,endpoint,file,download_url,phenotype,cases,controls
+alopecia_areata,L12_ALOPECAREATA,data/raw/finngen/outcomes/finngen_R13_L12_ALOPECAREATA.gz,https://storage.googleapis.com/finngen-public-data-r13/summary_stats/finngen_R13_L12_ALOPECAREATA.gz,Alopecia areata,994,474896
+atopic_dermatitis,L12_DERMATITISECZEMA,data/raw/finngen/outcomes/finngen_R13_L12_DERMATITISECZEMA.gz,https://storage.googleapis.com/finngen-public-data-r13/summary_stats/finngen_R13_L12_DERMATITISECZEMA.gz,Dermatitis and eczema,72371,427815
+psoriasis,L12_PSORIASIS,data/raw/finngen/outcomes/finngen_R13_L12_PSORIASIS.gz,https://storage.googleapis.com/finngen-public-data-r13/summary_stats/finngen_R13_L12_PSORIASIS.gz,Psoriasis,13309,481187
+vitiligo,L12_VITILIGO,data/raw/finngen/outcomes/finngen_R13_L12_VITILIGO.gz,https://storage.googleapis.com/finngen-public-data-r13/summary_stats/finngen_R13_L12_VITILIGO.gz,Vitiligo,421,462830

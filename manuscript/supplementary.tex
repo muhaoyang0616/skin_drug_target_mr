@@ -1,0 +1,570 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{../manuscript_assets/figures/}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplementary Material\\\large Genetic Tractability of Clinically Relevant Dermatologic Immune Pathway Genes}
+\author{MU Haoyang and JIN Shan}
+\date{}
+\begin{document}
+\maketitle
+\noindent This supplement contains the curated panel rationale, complete instrument-availability matrix, all primary and exploratory MR estimates, TYK2 validation, colocalization, full delta-method sensitivity results, and the raw-data reproduction audit. Machine-readable versions of all tables accompany the submission.
+
+\vspace{1em}
+\noindent Instrument-availability estimates are conditional on the GTEx significant-pair files, which do not contain complete all-pairs cis summary statistics. Primary and relaxed-threshold results are kept as separate hypothesis families throughout. LD-dependent multi-SNP analyses, Steiger directionality, reverse MR, pQTL-null claims, and formal power percentages are not included because the validated local inputs did not support those analyses.
+\clearpage
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{2.0cm}p{5.0cm}p{4.2cm}p{12.0cm}}
+\caption{Composition and rationale of the curated 19-gene panel.}\label{tab:s1}\\
+\toprule
+\textbf{Gene} & \textbf{Panel category} & \textbf{Pathway/drug class} & \textbf{Dermatologic rationale} \\
+\midrule
+\endfirsthead
+\caption[]{Composition and rationale of the curated 19-gene panel. (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Panel category} & \textbf{Pathway/drug class} & \textbf{Dermatologic rationale} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{4}{p{0.96\linewidth}}{\footnotesize The panel intentionally combines direct drug targets, target-family members, pathway genes, and disease-relevant controls. It should not be interpreted as 19 direct targets of marketed drugs.} \\
+\endlastfoot
+\textit{JAK1} & Drug-target family / signaling gene & JAK inhibitor & Atopic dermatitis and psoriasis pathway target; approved or investigational JAK blockade \\
+\textit{JAK2} & Drug-target family / signaling gene & JAK inhibitor & Cytokine signaling target relevant to psoriasis vitiligo and alopecia areata \\
+\textit{JAK3} & Drug-target family / signaling gene & JAK inhibitor & Lymphocyte cytokine signaling target relevant to atopic dermatitis alopecia areata and vitiligo \\
+\textit{TYK2} & Direct target / signaling gene & TYK2 inhibitor & IL23 and type I interferon pathway target with psoriasis drug relevance \\
+\textit{IL4R} & Direct target & IL4/IL13 pathway biologic & Approved biologic target in type 2 atopic dermatitis \\
+\textit{IL13} & Direct target & IL13 biologic & Type 2 inflammation target in atopic dermatitis \\
+\textit{IL17A} & Direct target & IL17 biologic & Approved biologic target in psoriasis \\
+\textit{IL17RA} & Direct target & IL17 receptor biologic & Approved pathway target in psoriasis \\
+\textit{IL23A} & Direct target component & IL23 biologic & IL23 pathway target in psoriasis \\
+\textit{IL23R} & Pathway receptor & IL23 pathway target & Genetic and therapeutic relevance in psoriasis and immune disease \\
+\textit{TNF} & Direct target & TNF inhibitor & Established inflammatory skin disease biologic target especially psoriasis \\
+\textit{PDE4A} & Drug-target family member & PDE4 inhibitor & PDE4 inhibitor target family member relevant to psoriasis and atopic dermatitis \\
+\textit{PDE4B} & Drug-target family member & PDE4 inhibitor & PDE4 inhibitor target family member relevant to inflammatory cytokine regulation \\
+\textit{PDE4C} & Drug-target family member & PDE4 inhibitor & PDE4 inhibitor target family member included for PDE4 family coverage \\
+\textit{PDE4D} & Drug-target family member & PDE4 inhibitor & PDE4 inhibitor target family member relevant to inflammatory signaling \\
+\textit{IL36RN} & Disease-pathway gene & IL36 pathway target & Pustular psoriasis and IL36 pathway relevance \\
+\textit{TSLP} & Direct target & TSLP biologic & Upstream epithelial alarmin relevant to atopic dermatitis \\
+\textit{FLG} & Barrier-gene control & Barrier gene & Skin barrier and atopic dermatitis genetic relevance; not classic drug target \\
+\textit{CARD14} & Disease-pathway control & NF-kB pathway gene & Familial psoriasis and keratinocyte immune signaling relevance \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{1.7cm}p{3.3cm}p{2.2cm}p{5.0cm}p{1.8cm}p{1.8cm}p{2.2cm}p{1.3cm}}
+\caption{Cis-eQTL instrument availability in all 57 gene--tissue cells.}\label{tab:s2}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Status} & \textbf{GTEx variant} & \textbf{Beta exp.} & \textbf{SE exp.} & \textbf{P exp.} & \textbf{F} \\
+\midrule
+\endfirsthead
+\caption[]{Cis-eQTL instrument availability in all 57 gene--tissue cells. (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Status} & \textbf{GTEx variant} & \textbf{Beta exp.} & \textbf{SE exp.} & \textbf{P exp.} & \textbf{F} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{8}{p{0.96\linewidth}}{\footnotesize Primary required P $<5\times10^{-8}$ and F $>10$. Relaxed-only required P $<10^{-5}$ and F $>10$ in a cell without a primary instrument. None indicates no eligible row in the analyzed GTEx significant-pair file at either threshold. The PDE4A whole-blood primary variant did not occur in any of the four FinnGen outcome files.} \\
+\endlastfoot
+\textit{JAK1} & Non-sun-exposed skin & Primary & chr1\_64883861\_A\_G\_b38 & -0.1602 & 0.0251 & 4.35e-10 & 40.7 \\
+\textit{JAK1} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{JAK1} & Whole blood & Primary & chr1\_65052771\_G\_A\_b38 & 0.1055 & 0.0173 & 2.05e-09 & 37.1 \\
+\textit{JAK2} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{JAK2} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{JAK2} & Whole blood & None & -- &  &  &  &  \\
+\textit{JAK3} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{JAK3} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{JAK3} & Whole blood & None & -- &  &  &  &  \\
+\textit{TYK2} & Non-sun-exposed skin & Primary & chr19\_10354011\_A\_G\_b38 & 0.1447 & 0.0188 & 9.90e-14 & 59.0 \\
+\textit{TYK2} & Sun-exposed skin & Primary & chr19\_10349293\_G\_A\_b38 & 0.1394 & 0.0207 & 4.42e-11 & 45.3 \\
+\textit{TYK2} & Whole blood & Primary & chr19\_10354011\_A\_G\_b38 & 0.1075 & 0.0129 & 4.80e-16 & 69.7 \\
+\textit{IL4R} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL4R} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL4R} & Whole blood & Primary & chr16\_27315893\_T\_G\_b38 & 0.1776 & 0.0148 & 8.04e-30 & 143.6 \\
+\textit{IL13} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL13} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL13} & Whole blood & None & -- &  &  &  &  \\
+\textit{IL17A} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL17A} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL17A} & Whole blood & None & -- &  &  &  &  \\
+\textit{IL17RA} & Non-sun-exposed skin & Primary & chr22\_17105741\_G\_A\_b38 & 0.3239 & 0.0201 & 2.53e-46 & 259.2 \\
+\textit{IL17RA} & Sun-exposed skin & Primary & chr22\_17105741\_G\_A\_b38 & 0.4496 & 0.0212 & 1.12e-72 & 447.9 \\
+\textit{IL17RA} & Whole blood & Primary & chr22\_17105693\_C\_G\_b38 & 0.1103 & 0.0119 & 2.81e-19 & 86.3 \\
+\textit{IL23A} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL23A} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL23A} & Whole blood & None & -- &  &  &  &  \\
+\textit{IL23R} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL23R} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL23R} & Whole blood & None & -- &  &  &  &  \\
+\textit{TNF} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{TNF} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{TNF} & Whole blood & None & -- &  &  &  &  \\
+\textit{PDE4A} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{PDE4A} & Sun-exposed skin & Relaxed-only & chr19\_10430708\_C\_G\_b38 & -0.2780 & 0.0594 & 3.65e-06 & 21.9 \\
+\textit{PDE4A} & Whole blood & Primary & chr19\_10432131\_G\_A\_b38 & 0.7003 & 0.0635 & 7.05e-26 & 121.6 \\
+\textit{PDE4B} & Non-sun-exposed skin & Relaxed-only & chr1\_66286524\_A\_G\_b38 & 0.1633 & 0.0305 & 1.37e-07 & 28.7 \\
+\textit{PDE4B} & Sun-exposed skin & Relaxed-only & chr1\_66273073\_C\_T\_b38 & 0.1251 & 0.0262 & 2.36e-06 & 22.8 \\
+\textit{PDE4B} & Whole blood & None & -- &  &  &  &  \\
+\textit{PDE4C} & Non-sun-exposed skin & Primary & chr19\_18206151\_C\_T\_b38 & 0.2734 & 0.0472 & 1.26e-08 & 33.6 \\
+\textit{PDE4C} & Sun-exposed skin & Relaxed-only & chr19\_18215381\_G\_T\_b38 & 0.2296 & 0.0420 & 7.12e-08 & 29.9 \\
+\textit{PDE4C} & Whole blood & None & -- &  &  &  &  \\
+\textit{PDE4D} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{PDE4D} & Sun-exposed skin & None & -- &  &  &  &  \\
+\textit{PDE4D} & Whole blood & None & -- &  &  &  &  \\
+\textit{IL36RN} & Non-sun-exposed skin & None & -- &  &  &  &  \\
+\textit{IL36RN} & Sun-exposed skin & Relaxed-only & chr2\_113080188\_T\_G\_b38 & -0.1130 & 0.0237 & 2.36e-06 & 22.8 \\
+\textit{IL36RN} & Whole blood & None & -- &  &  &  &  \\
+\textit{TSLP} & Non-sun-exposed skin & Primary & chr5\_111073369\_C\_G\_b38 & -0.4989 & 0.0346 & 6.37e-39 & 207.6 \\
+\textit{TSLP} & Sun-exposed skin & Primary & chr5\_111073007\_C\_T\_b38 & -0.5931 & 0.0382 & 4.60e-45 & 240.5 \\
+\textit{TSLP} & Whole blood & None & -- &  &  &  &  \\
+\textit{FLG} & Non-sun-exposed skin & Primary & chr1\_152288539\_T\_TG\_b38 & -0.2080 & 0.0354 & 8.40e-09 & 34.5 \\
+\textit{FLG} & Sun-exposed skin & Primary & chr1\_152242307\_T\_C\_b38 & 0.2063 & 0.0278 & 4.60e-13 & 55.1 \\
+\textit{FLG} & Whole blood & None & -- &  &  &  &  \\
+\textit{CARD14} & Non-sun-exposed skin & Primary & chr17\_79607855\_C\_G\_b38 & 0.8811 & 0.1521 & 1.30e-08 & 33.6 \\
+\textit{CARD14} & Sun-exposed skin & Primary & chr17\_80147951\_G\_A\_b38 & 0.2026 & 0.0327 & 1.21e-09 & 38.3 \\
+\textit{CARD14} & Whole blood & Primary & chr17\_80211843\_G\_A\_b38 & 0.3480 & 0.0393 & 9.05e-18 & 78.5 \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{1.5cm}p{2.7cm}p{2.5cm}p{4.2cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.4cm}p{3.4cm}p{1.8cm}p{1.8cm}}
+\caption{Full primary Mendelian randomization results (68 tests).}\label{tab:s3}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{Variant} & \textbf{Beta exp.} & \textbf{Beta out.} & \textbf{Beta MR} & \textbf{SE MR} & \textbf{OR (95\% CI)} & \textbf{P} & \textbf{FDR} \\
+\midrule
+\endfirsthead
+\caption[]{Full primary Mendelian randomization results (68 tests). (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{Variant} & \textbf{Beta exp.} & \textbf{Beta out.} & \textbf{Beta MR} & \textbf{SE MR} & \textbf{OR (95\% CI)} & \textbf{P} & \textbf{FDR} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{11}{p{0.96\linewidth}}{\footnotesize SE MR is the conventional first-order Wald-ratio standard error. BH-FDR was calculated across these 68 primary tests only.} \\
+\endlastfoot
+\textit{JAK1} & Non-sun-exposed skin & Alopecia areata & chr1\_64883861\_A\_G\_b38 & -0.1602 & -0.0485 & 0.3027 & 0.3272 & 1.353 (0.713--2.570) & 0.355 & 0.779 \\
+\textit{JAK1} & Non-sun-exposed skin & Dermatitis/eczema & chr1\_64883861\_A\_G\_b38 & -0.1602 & 8.13e-04 & -0.0051 & 0.0417 & 0.995 (0.917--1.080) & 0.903 & 0.980 \\
+\textit{JAK1} & Non-sun-exposed skin & Psoriasis & chr1\_64883861\_A\_G\_b38 & -0.1602 & 0.0117 & -0.0733 & 0.0908 & 0.929 (0.778--1.110) & 0.419 & 0.864 \\
+\textit{JAK1} & Non-sun-exposed skin & Vitiligo & chr1\_64883861\_A\_G\_b38 & -0.1602 & 0.0252 & -0.1576 & 0.5024 & 0.854 (0.319--2.287) & 0.754 & 0.980 \\
+\textit{JAK1} & Whole blood & Alopecia areata & chr1\_65052771\_G\_A\_b38 & 0.1055 & 0.0448 & 0.4243 & 0.5168 & 1.529 (0.555--4.209) & 0.412 & 0.864 \\
+\textit{JAK1} & Whole blood & Dermatitis/eczema & chr1\_65052771\_G\_A\_b38 & 0.1055 & -0.0146 & -0.1387 & 0.0660 & 0.870 (0.765--0.991) & 0.036 & 0.484 \\
+\textit{JAK1} & Whole blood & Psoriasis & chr1\_65052771\_G\_A\_b38 & 0.1055 & -0.0228 & -0.2164 & 0.1434 & 0.805 (0.608--1.067) & 0.131 & 0.701 \\
+\textit{JAK1} & Whole blood & Vitiligo & chr1\_65052771\_G\_A\_b38 & 0.1055 & -0.1079 & -1.0226 & 0.7917 & 0.360 (0.076--1.697) & 0.196 & 0.701 \\
+\textit{TYK2} & Non-sun-exposed skin & Alopecia areata & chr19\_10354011\_A\_G\_b38 & 0.1447 & 0.0480 & 0.3319 & 0.3128 & 1.394 (0.755--2.573) & 0.289 & 0.701 \\
+\textit{TYK2} & Non-sun-exposed skin & Dermatitis/eczema & chr19\_10354011\_A\_G\_b38 & 0.1447 & -4.59e-04 & -0.0032 & 0.0399 & 0.997 (0.922--1.078) & 0.937 & 0.980 \\
+\textit{TYK2} & Non-sun-exposed skin & Psoriasis & chr19\_10354011\_A\_G\_b38 & 0.1447 & -0.0730 & -0.5043 & 0.0867 & 0.604 (0.510--0.716) & 5.91e-09 & 1.34e-07 \\
+\textit{TYK2} & Non-sun-exposed skin & Vitiligo & chr19\_10354011\_A\_G\_b38 & 0.1447 & -0.0482 & -0.3334 & 0.4803 & 0.717 (0.280--1.837) & 0.488 & 0.921 \\
+\textit{TYK2} & Sun-exposed skin & Alopecia areata & chr19\_10349293\_G\_A\_b38 & 0.1394 & -0.0111 & -0.0799 & 0.3683 & 0.923 (0.448--1.900) & 0.828 & 0.980 \\
+\textit{TYK2} & Sun-exposed skin & Dermatitis/eczema & chr19\_10349293\_G\_A\_b38 & 0.1394 & -0.0044 & -0.0316 & 0.0470 & 0.969 (0.884--1.062) & 0.501 & 0.921 \\
+\textit{TYK2} & Sun-exposed skin & Psoriasis & chr19\_10349293\_G\_A\_b38 & 0.1394 & -0.1100 & -0.7888 & 0.1035 & 0.454 (0.371--0.557) & 2.50e-14 & 1.70e-12 \\
+\textit{TYK2} & Sun-exposed skin & Vitiligo & chr19\_10349293\_G\_A\_b38 & 0.1394 & -0.0736 & -0.5279 & 0.5644 & 0.590 (0.195--1.783) & 0.350 & 0.779 \\
+\textit{TYK2} & Whole blood & Alopecia areata & chr19\_10354011\_A\_G\_b38 & 0.1075 & 0.0480 & 0.4469 & 0.4212 & 1.563 (0.685--3.570) & 0.289 & 0.701 \\
+\textit{TYK2} & Whole blood & Dermatitis/eczema & chr19\_10354011\_A\_G\_b38 & 0.1075 & -4.59e-04 & -0.0043 & 0.0538 & 0.996 (0.896--1.106) & 0.937 & 0.980 \\
+\textit{TYK2} & Whole blood & Psoriasis & chr19\_10354011\_A\_G\_b38 & 0.1075 & -0.0730 & -0.6790 & 0.1167 & 0.507 (0.403--0.637) & 5.91e-09 & 1.34e-07 \\
+\textit{TYK2} & Whole blood & Vitiligo & chr19\_10354011\_A\_G\_b38 & 0.1075 & -0.0482 & -0.4488 & 0.6466 & 0.638 (0.180--2.267) & 0.488 & 0.921 \\
+\textit{IL4R} & Whole blood & Alopecia areata & chr16\_27315893\_T\_G\_b38 & 0.1776 & -0.0165 & -0.0928 & 0.2663 & 0.911 (0.541--1.536) & 0.728 & 0.980 \\
+\textit{IL4R} & Whole blood & Dermatitis/eczema & chr16\_27315893\_T\_G\_b38 & 0.1776 & 0.0047 & 0.0266 & 0.0340 & 1.027 (0.961--1.098) & 0.434 & 0.868 \\
+\textit{IL4R} & Whole blood & Psoriasis & chr16\_27315893\_T\_G\_b38 & 0.1776 & 0.0032 & 0.0180 & 0.0738 & 1.018 (0.881--1.177) & 0.808 & 0.980 \\
+\textit{IL4R} & Whole blood & Vitiligo & chr16\_27315893\_T\_G\_b38 & 0.1776 & 0.0948 & 0.5339 & 0.4081 & 1.706 (0.766--3.795) & 0.191 & 0.701 \\
+\textit{IL17RA} & Non-sun-exposed skin & Alopecia areata & chr22\_17105741\_G\_A\_b38 & 0.3239 & -0.0491 & -0.1517 & 0.1391 & 0.859 (0.654--1.129) & 0.276 & 0.701 \\
+\textit{IL17RA} & Non-sun-exposed skin & Dermatitis/eczema & chr22\_17105741\_G\_A\_b38 & 0.3239 & 0.0077 & 0.0238 & 0.0178 & 1.024 (0.989--1.060) & 0.181 & 0.701 \\
+\textit{IL17RA} & Non-sun-exposed skin & Psoriasis & chr22\_17105741\_G\_A\_b38 & 0.3239 & -0.0062 & -0.0190 & 0.0388 & 0.981 (0.909--1.059) & 0.623 & 0.980 \\
+\textit{IL17RA} & Non-sun-exposed skin & Vitiligo & chr22\_17105741\_G\_A\_b38 & 0.3239 & -0.0062 & -0.0192 & 0.2140 & 0.981 (0.645--1.492) & 0.929 & 0.980 \\
+\textit{IL17RA} & Sun-exposed skin & Alopecia areata & chr22\_17105741\_G\_A\_b38 & 0.4496 & -0.0491 & -0.1093 & 0.1002 & 0.896 (0.737--1.091) & 0.276 & 0.701 \\
+\textit{IL17RA} & Sun-exposed skin & Dermatitis/eczema & chr22\_17105741\_G\_A\_b38 & 0.4496 & 0.0077 & 0.0172 & 0.0128 & 1.017 (0.992--1.043) & 0.181 & 0.701 \\
+\textit{IL17RA} & Sun-exposed skin & Psoriasis & chr22\_17105741\_G\_A\_b38 & 0.4496 & -0.0062 & -0.0137 & 0.0279 & 0.986 (0.934--1.042) & 0.623 & 0.980 \\
+\textit{IL17RA} & Sun-exposed skin & Vitiligo & chr22\_17105741\_G\_A\_b38 & 0.4496 & -0.0062 & -0.0138 & 0.1541 & 0.986 (0.729--1.334) & 0.929 & 0.980 \\
+\textit{IL17RA} & Whole blood & Alopecia areata & chr22\_17105693\_C\_G\_b38 & 0.1103 & -0.0532 & -0.4825 & 0.4084 & 0.617 (0.277--1.374) & 0.237 & 0.701 \\
+\textit{IL17RA} & Whole blood & Dermatitis/eczema & chr22\_17105693\_C\_G\_b38 & 0.1103 & 0.0068 & 0.0617 & 0.0522 & 1.064 (0.960--1.178) & 0.237 & 0.701 \\
+\textit{IL17RA} & Whole blood & Psoriasis & chr22\_17105693\_C\_G\_b38 & 0.1103 & -0.0072 & -0.0651 & 0.1137 & 0.937 (0.750--1.171) & 0.567 & 0.980 \\
+\textit{IL17RA} & Whole blood & Vitiligo & chr22\_17105693\_C\_G\_b38 & 0.1103 & -0.0091 & -0.0829 & 0.6281 & 0.920 (0.269--3.152) & 0.895 & 0.980 \\
+\textit{PDE4C} & Non-sun-exposed skin & Alopecia areata & chr19\_18206151\_C\_T\_b38 & 0.2734 & 0.0148 & 0.0540 & 0.1655 & 1.055 (0.763--1.460) & 0.744 & 0.980 \\
+\textit{PDE4C} & Non-sun-exposed skin & Dermatitis/eczema & chr19\_18206151\_C\_T\_b38 & 0.2734 & -0.0069 & -0.0254 & 0.0211 & 0.975 (0.935--1.016) & 0.230 & 0.701 \\
+\textit{PDE4C} & Non-sun-exposed skin & Psoriasis & chr19\_18206151\_C\_T\_b38 & 0.2734 & -0.0190 & -0.0695 & 0.0460 & 0.933 (0.853--1.021) & 0.131 & 0.701 \\
+\textit{PDE4C} & Non-sun-exposed skin & Vitiligo & chr19\_18206151\_C\_T\_b38 & 0.2734 & 0.0141 & 0.0517 & 0.2543 & 1.053 (0.640--1.734) & 0.839 & 0.980 \\
+\textit{TSLP} & Non-sun-exposed skin & Alopecia areata & chr5\_111073369\_C\_G\_b38 & -0.4989 & -0.0068 & 0.0136 & 0.0906 & 1.014 (0.849--1.211) & 0.881 & 0.980 \\
+\textit{TSLP} & Non-sun-exposed skin & Dermatitis/eczema & chr5\_111073369\_C\_G\_b38 & -0.4989 & -0.0023 & 0.0047 & 0.0116 & 1.005 (0.982--1.028) & 0.688 & 0.980 \\
+\textit{TSLP} & Non-sun-exposed skin & Psoriasis & chr5\_111073369\_C\_G\_b38 & -0.4989 & 0.0140 & -0.0281 & 0.0252 & 0.972 (0.925--1.021) & 0.264 & 0.701 \\
+\textit{TSLP} & Non-sun-exposed skin & Vitiligo & chr5\_111073369\_C\_G\_b38 & -0.4989 & 0.0835 & -0.1673 & 0.1391 & 0.846 (0.644--1.111) & 0.229 & 0.701 \\
+\textit{TSLP} & Sun-exposed skin & Alopecia areata & chr5\_111073007\_C\_T\_b38 & -0.5931 & -0.0286 & 0.0482 & 0.0786 & 1.049 (0.900--1.224) & 0.539 & 0.965 \\
+\textit{TSLP} & Sun-exposed skin & Dermatitis/eczema & chr5\_111073007\_C\_T\_b38 & -0.5931 & 0.0064 & -0.0107 & 0.0100 & 0.989 (0.970--1.009) & 0.285 & 0.701 \\
+\textit{TSLP} & Sun-exposed skin & Psoriasis & chr5\_111073007\_C\_T\_b38 & -0.5931 & 0.0036 & -0.0061 & 0.0219 & 0.994 (0.952--1.037) & 0.781 & 0.980 \\
+\textit{TSLP} & Sun-exposed skin & Vitiligo & chr5\_111073007\_C\_T\_b38 & -0.5931 & 0.0843 & -0.1421 & 0.1207 & 0.868 (0.685--1.099) & 0.239 & 0.701 \\
+\textit{FLG} & Non-sun-exposed skin & Alopecia areata & chr1\_152288539\_T\_TG\_b38 & -0.2080 & 0.0193 & -0.0927 & 0.2886 & 0.912 (0.518--1.605) & 0.748 & 0.980 \\
+\textit{FLG} & Non-sun-exposed skin & Dermatitis/eczema & chr1\_152288539\_T\_TG\_b38 & -0.2080 & 0.0021 & -0.0101 & 0.0369 & 0.990 (0.921--1.064) & 0.783 & 0.980 \\
+\textit{FLG} & Non-sun-exposed skin & Psoriasis & chr1\_152288539\_T\_TG\_b38 & -0.2080 & 0.0010 & -0.0049 & 0.0803 & 0.995 (0.850--1.165) & 0.951 & 0.980 \\
+\textit{FLG} & Non-sun-exposed skin & Vitiligo & chr1\_152288539\_T\_TG\_b38 & -0.2080 & 0.0018 & -0.0089 & 0.4444 & 0.991 (0.415--2.368) & 0.984 & 0.984 \\
+\textit{FLG} & Sun-exposed skin & Alopecia areata & chr1\_152242307\_T\_C\_b38 & 0.2063 & -0.0192 & -0.0933 & 0.2909 & 0.911 (0.515--1.611) & 0.748 & 0.980 \\
+\textit{FLG} & Sun-exposed skin & Dermatitis/eczema & chr1\_152242307\_T\_C\_b38 & 0.2063 & -0.0021 & -0.0101 & 0.0372 & 0.990 (0.920--1.065) & 0.786 & 0.980 \\
+\textit{FLG} & Sun-exposed skin & Psoriasis & chr1\_152242307\_T\_C\_b38 & 0.2063 & -0.0013 & -0.0062 & 0.0810 & 0.994 (0.848--1.165) & 0.939 & 0.980 \\
+\textit{FLG} & Sun-exposed skin & Vitiligo & chr1\_152242307\_T\_C\_b38 & 0.2063 & -0.0018 & -0.0089 & 0.4480 & 0.991 (0.412--2.385) & 0.984 & 0.984 \\
+\textit{CARD14} & Non-sun-exposed skin & Alopecia areata & chr17\_79607855\_C\_G\_b38 & 0.8811 & -0.0378 & -0.0429 & 0.2060 & 0.958 (0.640--1.435) & 0.835 & 0.980 \\
+\textit{CARD14} & Non-sun-exposed skin & Dermatitis/eczema & chr17\_79607855\_C\_G\_b38 & 0.8811 & 0.0335 & 0.0381 & 0.0262 & 1.039 (0.987--1.094) & 0.147 & 0.701 \\
+\textit{CARD14} & Non-sun-exposed skin & Psoriasis & chr17\_79607855\_C\_G\_b38 & 0.8811 & -0.0096 & -0.0109 & 0.0579 & 0.989 (0.883--1.108) & 0.851 & 0.980 \\
+\textit{CARD14} & Non-sun-exposed skin & Vitiligo & chr17\_79607855\_C\_G\_b38 & 0.8811 & -0.5016 & -0.5693 & 0.3200 & 0.566 (0.302--1.060) & 0.075 & 0.701 \\
+\textit{CARD14} & Sun-exposed skin & Alopecia areata & chr17\_80147951\_G\_A\_b38 & 0.2026 & 0.1410 & 0.6959 & 0.4257 & 2.006 (0.871--4.619) & 0.102 & 0.701 \\
+\textit{CARD14} & Sun-exposed skin & Dermatitis/eczema & chr17\_80147951\_G\_A\_b38 & 0.2026 & 0.0028 & 0.0137 & 0.0544 & 1.014 (0.911--1.128) & 0.802 & 0.980 \\
+\textit{CARD14} & Sun-exposed skin & Psoriasis & chr17\_80147951\_G\_A\_b38 & 0.2026 & -0.0280 & -0.1384 & 0.1189 & 0.871 (0.690--1.099) & 0.244 & 0.701 \\
+\textit{CARD14} & Sun-exposed skin & Vitiligo & chr17\_80147951\_G\_A\_b38 & 0.2026 & -0.0474 & -0.2339 & 0.6537 & 0.791 (0.220--2.850) & 0.720 & 0.980 \\
+\textit{CARD14} & Whole blood & Alopecia areata & chr17\_80211843\_G\_A\_b38 & 0.3480 & -0.0430 & -0.1235 & 0.1299 & 0.884 (0.685--1.140) & 0.342 & 0.779 \\
+\textit{CARD14} & Whole blood & Dermatitis/eczema & chr17\_80211843\_G\_A\_b38 & 0.3480 & 0.0094 & 0.0271 & 0.0166 & 1.027 (0.995--1.061) & 0.103 & 0.701 \\
+\textit{CARD14} & Whole blood & Psoriasis & chr17\_80211843\_G\_A\_b38 & 0.3480 & 0.0351 & 0.1008 & 0.0361 & 1.106 (1.031--1.187) & 0.005 & 0.088 \\
+\textit{CARD14} & Whole blood & Vitiligo & chr17\_80211843\_G\_A\_b38 & 0.3480 & -0.0780 & -0.2241 & 0.1998 & 0.799 (0.540--1.182) & 0.262 & 0.701 \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{1.5cm}p{2.7cm}p{2.5cm}p{4.2cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.4cm}p{3.4cm}p{1.8cm}p{1.8cm}}
+\caption{Separate relaxed-threshold Mendelian randomization results (20 tests).}\label{tab:s4}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{Variant} & \textbf{Beta exp.} & \textbf{Beta out.} & \textbf{Beta MR} & \textbf{SE MR} & \textbf{OR (95\% CI)} & \textbf{P} & \textbf{FDR} \\
+\midrule
+\endfirsthead
+\caption[]{Separate relaxed-threshold Mendelian randomization results (20 tests). (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{Variant} & \textbf{Beta exp.} & \textbf{Beta out.} & \textbf{Beta MR} & \textbf{SE MR} & \textbf{OR (95\% CI)} & \textbf{P} & \textbf{FDR} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{11}{p{0.96\linewidth}}{\footnotesize These cells lacked a primary instrument and met only the relaxed \textit{P} $<10^{-5}$ threshold. BH-FDR was calculated across these 20 exploratory tests separately from the primary family.} \\
+\endlastfoot
+\textit{PDE4A} & Sun-exposed skin & Alopecia areata & chr19\_10430708\_C\_G\_b38 & -0.2780 & -0.1873 & 0.6736 & 0.6871 & 1.961 (0.510--7.541) & 0.327 & 0.699 \\
+\textit{PDE4A} & Sun-exposed skin & Dermatitis/eczema & chr19\_10430708\_C\_G\_b38 & -0.2780 & -0.0421 & 0.1515 & 0.0874 & 1.164 (0.980--1.381) & 0.083 & 0.415 \\
+\textit{PDE4A} & Sun-exposed skin & Psoriasis & chr19\_10430708\_C\_G\_b38 & -0.2780 & -0.2894 & 1.0408 & 0.2080 & 2.832 (1.883--4.257) & 5.65e-07 & 1.13e-05 \\
+\textit{PDE4A} & Sun-exposed skin & Vitiligo & chr19\_10430708\_C\_G\_b38 & -0.2780 & -0.6963 & 2.5044 & 1.0445 & 12.237 (1.580--94.787) & 0.016 & 0.149 \\
+\textit{PDE4B} & Non-sun-exposed skin & Alopecia areata & chr1\_66286524\_A\_G\_b38 & 0.1633 & 0.0494 & 0.3027 & 0.3550 & 1.354 (0.675--2.714) & 0.394 & 0.699 \\
+\textit{PDE4B} & Non-sun-exposed skin & Dermatitis/eczema & chr1\_66286524\_A\_G\_b38 & 0.1633 & 5.89e-04 & 0.0036 & 0.0454 & 1.004 (0.918--1.097) & 0.937 & 0.973 \\
+\textit{PDE4B} & Non-sun-exposed skin & Psoriasis & chr1\_66286524\_A\_G\_b38 & 0.1633 & -9.14e-04 & -0.0056 & 0.0989 & 0.994 (0.819--1.207) & 0.955 & 0.973 \\
+\textit{PDE4B} & Non-sun-exposed skin & Vitiligo & chr1\_66286524\_A\_G\_b38 & 0.1633 & 0.0809 & 0.4956 & 0.5458 & 1.641 (0.563--4.784) & 0.364 & 0.699 \\
+\textit{PDE4B} & Sun-exposed skin & Alopecia areata & chr1\_66273073\_C\_T\_b38 & 0.1251 & 0.0199 & 0.1590 & 0.3633 & 1.172 (0.575--2.390) & 0.662 & 0.781 \\
+\textit{PDE4B} & Sun-exposed skin & Dermatitis/eczema & chr1\_66273073\_C\_T\_b38 & 0.1251 & 0.0078 & 0.0621 & 0.0464 & 1.064 (0.972--1.165) & 0.181 & 0.516 \\
+\textit{PDE4B} & Sun-exposed skin & Psoriasis & chr1\_66273073\_C\_T\_b38 & 0.1251 & 0.0078 & 0.0623 & 0.1009 & 1.064 (0.873--1.297) & 0.537 & 0.781 \\
+\textit{PDE4B} & Sun-exposed skin & Vitiligo & chr1\_66273073\_C\_T\_b38 & 0.1251 & 0.0326 & 0.2609 & 0.5583 & 1.298 (0.435--3.877) & 0.640 & 0.781 \\
+\textit{PDE4C} & Sun-exposed skin & Alopecia areata & chr19\_18215381\_G\_T\_b38 & 0.2296 & 0.0209 & 0.0910 & 0.1967 & 1.095 (0.745--1.611) & 0.644 & 0.781 \\
+\textit{PDE4C} & Sun-exposed skin & Dermatitis/eczema & chr19\_18215381\_G\_T\_b38 & 0.2296 & -0.0066 & -0.0286 & 0.0251 & 0.972 (0.925--1.021) & 0.254 & 0.636 \\
+\textit{PDE4C} & Sun-exposed skin & Psoriasis & chr19\_18215381\_G\_T\_b38 & 0.2296 & -0.0191 & -0.0833 & 0.0547 & 0.920 (0.827--1.024) & 0.127 & 0.510 \\
+\textit{PDE4C} & Sun-exposed skin & Vitiligo & chr19\_18215381\_G\_T\_b38 & 0.2296 & 0.0302 & 0.1315 & 0.3025 & 1.141 (0.630--2.063) & 0.664 & 0.781 \\
+\textit{IL36RN} & Sun-exposed skin & Alopecia areata & chr2\_113080188\_T\_G\_b38 & -0.1130 & -0.0371 & 0.3282 & 0.4064 & 1.388 (0.626--3.079) & 0.419 & 0.699 \\
+\textit{IL36RN} & Sun-exposed skin & Dermatitis/eczema & chr2\_113080188\_T\_G\_b38 & -0.1130 & 0.0134 & -0.1187 & 0.0520 & 0.888 (0.802--0.983) & 0.022 & 0.149 \\
+\textit{IL36RN} & Sun-exposed skin & Psoriasis & chr2\_113080188\_T\_G\_b38 & -0.1130 & 0.0180 & -0.1593 & 0.1130 & 0.853 (0.683--1.064) & 0.159 & 0.516 \\
+\textit{IL36RN} & Sun-exposed skin & Vitiligo & chr2\_113080188\_T\_G\_b38 & -0.1130 & 0.0024 & -0.0212 & 0.6228 & 0.979 (0.289--3.318) & 0.973 & 0.973 \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{4.0cm}p{3.0cm}p{5.0cm}p{2.0cm}p{3.5cm}p{3.0cm}}
+\caption{TYK2 eQTL and FinnGen psoriasis locus ranks.}\label{tab:s5}\\
+\toprule
+\textbf{Tissue} & \textbf{MR SNP} & \textbf{Top GTEx eQTL} & \textbf{eQTL rank} & \textbf{FinnGen locus lead} & \textbf{MR SNP locus rank} \\
+\midrule
+\endfirsthead
+\caption[]{TYK2 eQTL and FinnGen psoriasis locus ranks. (continued)}\\
+\toprule
+\textbf{Tissue} & \textbf{MR SNP} & \textbf{Top GTEx eQTL} & \textbf{eQTL rank} & \textbf{FinnGen locus lead} & \textbf{MR SNP locus rank} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{6}{p{0.96\linewidth}}{\footnotesize Locus co-membership and rank do not establish LD equivalence between the MR instrument and the FinnGen lead variant.} \\
+\endlastfoot
+Non-sun-exposed skin & rs280497 & chr19\_10354011\_A\_G\_b38 & 1 & rs34536443 & 11 \\
+Sun-exposed skin & rs35251378 & chr19\_10349293\_G\_A\_b38 & 1 & rs34536443 & 4 \\
+Whole blood & rs280497 & chr19\_10354011\_A\_G\_b38 & 1 & rs34536443 & 11 \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{3.4cm}p{7.0cm}p{3.4cm}p{2.7cm}p{2.7cm}p{3.7cm}p{2.0cm}}
+\caption{OpenGWAS external directional concordance for TYK2.}\label{tab:s6}\\
+\toprule
+\textbf{GWAS ID} & \textbf{Trait} & \textbf{Tissue} & \textbf{Requested SNP} & \textbf{Matched SNP} & \textbf{OR (95\% CI)} & \textbf{P} \\
+\midrule
+\endfirsthead
+\caption[]{OpenGWAS external directional concordance for TYK2. (continued)}\\
+\toprule
+\textbf{GWAS ID} & \textbf{Trait} & \textbf{Tissue} & \textbf{Requested SNP} & \textbf{Matched SNP} & \textbf{OR (95\% CI)} & \textbf{P} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{7}{p{0.96\linewidth}}{\footnotesize The 23 rows are exact requested-variant matches from eight GWAS records and three tissue-specific exposure estimates. One unresolved proxy export was excluded because the proxy SNP and LD estimate were not preserved locally. The rows are not statistically independent, and overlap among contributing GWAS samples cannot be excluded.} \\
+\endlastfoot
+ebi-a-GCST90019016 & Psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.411 (0.330--0.512) & 2.89e-15 \\
+ebi-a-GCST90019016 & Psoriasis & Whole blood & rs280497 & rs280497 & 0.302 (0.224--0.407) & 2.89e-15 \\
+ebi-a-GCST90019016 & Psoriasis & Sun-exposed skin & rs35251378 & rs35251378 & 0.276 (0.213--0.358) & 1.95e-22 \\
+ebi-a-GCST90019017 & Psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.435 (0.354--0.535) & 3.57e-15 \\
+ebi-a-GCST90019017 & Psoriasis & Whole blood & rs280497 & rs280497 & 0.326 (0.247--0.431) & 3.57e-15 \\
+ebi-a-GCST90019017 & Psoriasis & Sun-exposed skin & rs35251378 & rs35251378 & 0.298 (0.234--0.380) & 1.72e-22 \\
+ebi-a-GCST005527 & Psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.417 (0.284--0.612) & 7.98e-06 \\
+ebi-a-GCST005527 & Psoriasis & Whole blood & rs280497 & rs280497 & 0.308 (0.183--0.516) & 7.98e-06 \\
+ukb-b-10537 & Non-cancer illness code, self-reported: psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.992 (0.989--0.995) & 8.23e-07 \\
+ukb-b-10537 & Non-cancer illness code, self-reported: psoriasis & Whole blood & rs280497 & rs280497 & 0.990 (0.986--0.994) & 8.23e-07 \\
+ukb-b-10537 & Non-cancer illness code, self-reported: psoriasis & Sun-exposed skin & rs35251378 & rs35251378 & 0.988 (0.985--0.992) & 9.00e-12 \\
+ebi-a-GCST90018907 & Psoriasis vulgaris & Non-sun-exposed skin & rs280497 & rs280497 & 0.488 (0.371--0.641) & 2.70e-07 \\
+ebi-a-GCST90018907 & Psoriasis vulgaris & Whole blood & rs280497 & rs280497 & 0.380 (0.263--0.550) & 2.70e-07 \\
+ebi-a-GCST90018907 & Psoriasis vulgaris & Sun-exposed skin & rs35251378 & rs35251378 & 0.320 (0.234--0.439) & 1.39e-12 \\
+ukb-a-100 & Non-cancer illness code  self-reported: psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.991 (0.987--0.994) & 2.84e-07 \\
+ukb-a-100 & Non-cancer illness code  self-reported: psoriasis & Whole blood & rs280497 & rs280497 & 0.988 (0.983--0.992) & 2.84e-07 \\
+ukb-a-100 & Non-cancer illness code  self-reported: psoriasis & Sun-exposed skin & rs35251378 & rs35251378 & 0.986 (0.982--0.990) & 2.84e-11 \\
+ieu-b-5116 & Psoriatic arthritis & Non-sun-exposed skin & rs280497 & rs280497 & 0.424 (0.323--0.556) & 5.79e-10 \\
+ieu-b-5116 & Psoriatic arthritis & Whole blood & rs280497 & rs280497 & 0.315 (0.219--0.454) & 5.79e-10 \\
+ieu-b-5116 & Psoriatic arthritis & Sun-exposed skin & rs35251378 & rs35251378 & 0.291 (0.210--0.403) & 1.10e-13 \\
+ebi-a-GCST90038681 & Psoriasis & Non-sun-exposed skin & rs280497 & rs280497 & 0.992 (0.989--0.995) & 2.37e-07 \\
+ebi-a-GCST90038681 & Psoriasis & Whole blood & rs280497 & rs280497 & 0.990 (0.986--0.994) & 2.37e-07 \\
+ebi-a-GCST90038681 & Psoriasis & Sun-exposed skin & rs35251378 & rs35251378 & 0.988 (0.985--0.991) & 1.51e-12 \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{1.8cm}p{6.0cm}p{2.4cm}p{2.0cm}p{1.7cm}p{1.7cm}p{1.7cm}p{4.0cm}}
+\caption{Bayesian colocalization results.}\label{tab:s7}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Dataset} & \textbf{N variants} & \textbf{PP.H2} & \textbf{PP.H3} & \textbf{PP.H4} & \textbf{Interpretation} \\
+\midrule
+\endfirsthead
+\caption[]{Bayesian colocalization results. (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Dataset} & \textbf{N variants} & \textbf{PP.H2} & \textbf{PP.H3} & \textbf{PP.H4} & \textbf{Interpretation} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{8}{p{0.96\linewidth}}{\footnotesize TYK2 was the primary positive-control locus. PDE4A was evaluated only as a relaxed-threshold exploratory signal. The selected PDE4A MR instrument was absent from the eQTL Catalogue rows used for colocalization, so the locus-level result did not directly test that variant and should be regarded as non-supportive rather than definitive. JAK2 is omitted because it did not meet either instrument threshold.} \\
+\endlastfoot
+\textit{TYK2} & skin sun exposed lower leg skin & QTD000316 & 2474 & 0.122 & 0.053 & 0.825 & strong\_coloc \\
+\textit{TYK2} & skin not sun exposed suprapubic & QTD000311 & 1969 & 0.653 & 0.127 & 0.220 & weak\_or\_no\_coloc \\
+\textit{TYK2} & whole blood & QTD000356 & 2494 & 0.164 & 0.054 & 0.782 & moderate\_coloc \\
+\textit{PDE4A} & skin sun exposed lower leg skin & QTD000316 & 1831 & 0.753 & 0.139 & 0.108 & weak\_or\_no\_coloc \\
+\end{longtable}
+\noindent\footnotesize Machine-readable Table S7 names the eQTL and GWAS lead variants within the shared colocalization input, using association \textit{p}-value and a deterministic tie-break; these need not equal the lead variants in either complete source locus. TYK2 prior-sensitivity checks were complete for sun-exposed skin and whole blood. At the analysis value $p_{12}=10^{-5}$ and larger evaluated $p_{12}$ values, PP.H4 remained at least 0.50, but it fell below 0.50 at sufficiently smaller evaluated $p_{12}$ values. Sensitivity plots were not generated for non-sun-exposed skin or PDE4A because their base PP.H4 values were below 0.50.
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{1.7cm}p{3.2cm}p{2.8cm}p{2.2cm}p{2.2cm}p{2.2cm}p{2.2cm}p{3.0cm}p{3.0cm}}
+\caption{First-order versus full delta-method sensitivity analysis.}\label{tab:s8}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{P first-order} & \textbf{FDR first-order} & \textbf{P full delta} & \textbf{FDR full delta} & \textbf{Primary category} & \textbf{Delta category} \\
+\midrule
+\endfirsthead
+\caption[]{First-order versus full delta-method sensitivity analysis. (continued)}\\
+\toprule
+\textbf{Gene} & \textbf{Tissue} & \textbf{Outcome} & \textbf{P first-order} & \textbf{FDR first-order} & \textbf{P full delta} & \textbf{FDR full delta} & \textbf{Primary category} & \textbf{Delta category} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{9}{p{0.96\linewidth}}{\footnotesize The full delta standard error includes uncertainty in the SNP-exposure association. No significance category changed.} \\
+\endlastfoot
+\textit{JAK1} & Non-sun-exposed skin & Alopecia areata & 0.355 & 0.779 & 0.360 & 0.790 & Null & Null \\
+\textit{JAK1} & Non-sun-exposed skin & Dermatitis/eczema & 0.903 & 0.980 & 0.903 & 0.980 & Null & Null \\
+\textit{JAK1} & Non-sun-exposed skin & Psoriasis & 0.419 & 0.864 & 0.423 & 0.870 & Null & Null \\
+\textit{JAK1} & Non-sun-exposed skin & Vitiligo & 0.754 & 0.980 & 0.754 & 0.980 & Null & Null \\
+\textit{JAK1} & Whole blood & Alopecia areata & 0.412 & 0.864 & 0.416 & 0.870 & Null & Null \\
+\textit{JAK1} & Whole blood & Dermatitis/eczema & 0.036 & 0.484 & 0.047 & 0.639 & Nominal & Nominal \\
+\textit{JAK1} & Whole blood & Psoriasis & 0.131 & 0.701 & 0.143 & 0.712 & Null & Null \\
+\textit{JAK1} & Whole blood & Vitiligo & 0.196 & 0.701 & 0.206 & 0.712 & Null & Null \\
+\textit{TYK2} & Non-sun-exposed skin & Alopecia areata & 0.289 & 0.701 & 0.293 & 0.712 & Null & Null \\
+\textit{TYK2} & Non-sun-exposed skin & Dermatitis/eczema & 0.937 & 0.980 & 0.937 & 0.980 & Null & Null \\
+\textit{TYK2} & Non-sun-exposed skin & Psoriasis & 5.91e-09 & 1.34e-07 & 3.50e-06 & 7.94e-05 & FDR significant & FDR significant \\
+\textit{TYK2} & Non-sun-exposed skin & Vitiligo & 0.488 & 0.921 & 0.489 & 0.924 & Null & Null \\
+\textit{TYK2} & Sun-exposed skin & Alopecia areata & 0.828 & 0.980 & 0.828 & 0.980 & Null & Null \\
+\textit{TYK2} & Sun-exposed skin & Dermatitis/eczema & 0.501 & 0.921 & 0.503 & 0.924 & Null & Null \\
+\textit{TYK2} & Sun-exposed skin & Psoriasis & 2.50e-14 & 1.70e-12 & 4.55e-07 & 3.10e-05 & FDR significant & FDR significant \\
+\textit{TYK2} & Sun-exposed skin & Vitiligo & 0.350 & 0.779 & 0.354 & 0.790 & Null & Null \\
+\textit{TYK2} & Whole blood & Alopecia areata & 0.289 & 0.701 & 0.293 & 0.712 & Null & Null \\
+\textit{TYK2} & Whole blood & Dermatitis/eczema & 0.937 & 0.980 & 0.937 & 0.980 & Null & Null \\
+\textit{TYK2} & Whole blood & Psoriasis & 5.91e-09 & 1.34e-07 & 1.81e-06 & 6.14e-05 & FDR significant & FDR significant \\
+\textit{TYK2} & Whole blood & Vitiligo & 0.488 & 0.921 & 0.489 & 0.924 & Null & Null \\
+\textit{IL4R} & Whole blood & Alopecia areata & 0.728 & 0.980 & 0.728 & 0.980 & Null & Null \\
+\textit{IL4R} & Whole blood & Dermatitis/eczema & 0.434 & 0.868 & 0.435 & 0.870 & Null & Null \\
+\textit{IL4R} & Whole blood & Psoriasis & 0.808 & 0.980 & 0.808 & 0.980 & Null & Null \\
+\textit{IL4R} & Whole blood & Vitiligo & 0.191 & 0.701 & 0.193 & 0.712 & Null & Null \\
+\textit{IL17RA} & Non-sun-exposed skin & Alopecia areata & 0.276 & 0.701 & 0.277 & 0.712 & Null & Null \\
+\textit{IL17RA} & Non-sun-exposed skin & Dermatitis/eczema & 0.181 & 0.701 & 0.182 & 0.712 & Null & Null \\
+\textit{IL17RA} & Non-sun-exposed skin & Psoriasis & 0.623 & 0.980 & 0.623 & 0.980 & Null & Null \\
+\textit{IL17RA} & Non-sun-exposed skin & Vitiligo & 0.929 & 0.980 & 0.929 & 0.980 & Null & Null \\
+\textit{IL17RA} & Sun-exposed skin & Alopecia areata & 0.276 & 0.701 & 0.276 & 0.712 & Null & Null \\
+\textit{IL17RA} & Sun-exposed skin & Dermatitis/eczema & 0.181 & 0.701 & 0.181 & 0.712 & Null & Null \\
+\textit{IL17RA} & Sun-exposed skin & Psoriasis & 0.623 & 0.980 & 0.623 & 0.980 & Null & Null \\
+\textit{IL17RA} & Sun-exposed skin & Vitiligo & 0.929 & 0.980 & 0.929 & 0.980 & Null & Null \\
+\textit{IL17RA} & Whole blood & Alopecia areata & 0.237 & 0.701 & 0.241 & 0.712 & Null & Null \\
+\textit{IL17RA} & Whole blood & Dermatitis/eczema & 0.237 & 0.701 & 0.241 & 0.712 & Null & Null \\
+\textit{IL17RA} & Whole blood & Psoriasis & 0.567 & 0.980 & 0.568 & 0.980 & Null & Null \\
+\textit{IL17RA} & Whole blood & Vitiligo & 0.895 & 0.980 & 0.895 & 0.980 & Null & Null \\
+\textit{PDE4C} & Non-sun-exposed skin & Alopecia areata & 0.744 & 0.980 & 0.745 & 0.980 & Null & Null \\
+\textit{PDE4C} & Non-sun-exposed skin & Dermatitis/eczema & 0.230 & 0.701 & 0.240 & 0.712 & Null & Null \\
+\textit{PDE4C} & Non-sun-exposed skin & Psoriasis & 0.131 & 0.701 & 0.144 & 0.712 & Null & Null \\
+\textit{PDE4C} & Non-sun-exposed skin & Vitiligo & 0.839 & 0.980 & 0.839 & 0.980 & Null & Null \\
+\textit{TSLP} & Non-sun-exposed skin & Alopecia areata & 0.881 & 0.980 & 0.881 & 0.980 & Null & Null \\
+\textit{TSLP} & Non-sun-exposed skin & Dermatitis/eczema & 0.688 & 0.980 & 0.688 & 0.980 & Null & Null \\
+\textit{TSLP} & Non-sun-exposed skin & Psoriasis & 0.264 & 0.701 & 0.265 & 0.712 & Null & Null \\
+\textit{TSLP} & Non-sun-exposed skin & Vitiligo & 0.229 & 0.701 & 0.231 & 0.712 & Null & Null \\
+\textit{TSLP} & Sun-exposed skin & Alopecia areata & 0.539 & 0.965 & 0.540 & 0.966 & Null & Null \\
+\textit{TSLP} & Sun-exposed skin & Dermatitis/eczema & 0.285 & 0.701 & 0.286 & 0.712 & Null & Null \\
+\textit{TSLP} & Sun-exposed skin & Psoriasis & 0.781 & 0.980 & 0.781 & 0.980 & Null & Null \\
+\textit{TSLP} & Sun-exposed skin & Vitiligo & 0.239 & 0.701 & 0.240 & 0.712 & Null & Null \\
+\textit{FLG} & Non-sun-exposed skin & Alopecia areata & 0.748 & 0.980 & 0.749 & 0.980 & Null & Null \\
+\textit{FLG} & Non-sun-exposed skin & Dermatitis/eczema & 0.783 & 0.980 & 0.784 & 0.980 & Null & Null \\
+\textit{FLG} & Non-sun-exposed skin & Psoriasis & 0.951 & 0.980 & 0.951 & 0.980 & Null & Null \\
+\textit{FLG} & Non-sun-exposed skin & Vitiligo & 0.984 & 0.984 & 0.984 & 0.984 & Null & Null \\
+\textit{FLG} & Sun-exposed skin & Alopecia areata & 0.748 & 0.980 & 0.749 & 0.980 & Null & Null \\
+\textit{FLG} & Sun-exposed skin & Dermatitis/eczema & 0.786 & 0.980 & 0.787 & 0.980 & Null & Null \\
+\textit{FLG} & Sun-exposed skin & Psoriasis & 0.939 & 0.980 & 0.939 & 0.980 & Null & Null \\
+\textit{FLG} & Sun-exposed skin & Vitiligo & 0.984 & 0.984 & 0.984 & 0.984 & Null & Null \\
+\textit{CARD14} & Non-sun-exposed skin & Alopecia areata & 0.835 & 0.980 & 0.835 & 0.980 & Null & Null \\
+\textit{CARD14} & Non-sun-exposed skin & Dermatitis/eczema & 0.147 & 0.701 & 0.159 & 0.712 & Null & Null \\
+\textit{CARD14} & Non-sun-exposed skin & Psoriasis & 0.851 & 0.980 & 0.851 & 0.980 & Null & Null \\
+\textit{CARD14} & Non-sun-exposed skin & Vitiligo & 0.075 & 0.701 & 0.089 & 0.712 & Null & Null \\
+\textit{CARD14} & Sun-exposed skin & Alopecia areata & 0.102 & 0.701 & 0.114 & 0.712 & Null & Null \\
+\textit{CARD14} & Sun-exposed skin & Dermatitis/eczema & 0.802 & 0.980 & 0.802 & 0.980 & Null & Null \\
+\textit{CARD14} & Sun-exposed skin & Psoriasis & 0.244 & 0.701 & 0.253 & 0.712 & Null & Null \\
+\textit{CARD14} & Sun-exposed skin & Vitiligo & 0.720 & 0.980 & 0.721 & 0.980 & Null & Null \\
+\textit{CARD14} & Whole blood & Alopecia areata & 0.342 & 0.779 & 0.344 & 0.790 & Null & Null \\
+\textit{CARD14} & Whole blood & Dermatitis/eczema & 0.103 & 0.701 & 0.108 & 0.712 & Null & Null \\
+\textit{CARD14} & Whole blood & Psoriasis & 0.005 & 0.088 & 0.008 & 0.131 & Nominal & Nominal \\
+\textit{CARD14} & Whole blood & Vitiligo & 0.262 & 0.701 & 0.266 & 0.712 & Null & Null \\
+\end{longtable}
+\end{landscape}
+
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{16.0cm}p{6.0cm}}
+\caption{Raw-data reproduction audit.}\label{tab:s9}\\
+\toprule
+\textbf{Audit metric} & \textbf{Value} \\
+\midrule
+\endfirsthead
+\caption[]{Raw-data reproduction audit. (continued)}\\
+\toprule
+\textbf{Audit metric} & \textbf{Value} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\multicolumn{2}{p{0.96\linewidth}}{\footnotesize The audit reread three GTEx and four FinnGen compressed source files and regenerated all thresholding, harmonization, MR, and FDR calculations.} \\
+\endlastfoot
+Target gene--tissue cells & 57.000 \\
+Primary instrument cells & 18.000 \\
+Relaxed-only instrument cells & 5.000 \\
+Primary MR rows & 68.000 \\
+Saved rows matched & 68.000 \\
+Rows only in reproduction & 0.000 \\
+Rows only in saved output & 0.000 \\
+Maximum beta absolute error & 6.66e-16 \\
+Maximum SE absolute error & 5.55e-16 \\
+Maximum P-value absolute error & 5.55e-16 \\
+Maximum FDR absolute error & 8.88e-16 \\
+\end{longtable}
+\end{landscape}
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{18.0cm}p{4.0cm}}
+\caption{Raw input files used in the reproduction audit.}\label{tab:s10}\\
+\toprule
+\textbf{Compressed input file} & \textbf{Size (MiB)} \\
+\midrule
+\endfirsthead
+\caption[]{Raw input files used in the reproduction audit. (continued)}\\
+\toprule
+\textbf{Compressed input file} & \textbf{Size (MiB)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+
+\endlastfoot
+Skin\_Not\_Sun\_Exposed\_Suprapubic.v8.signif\_variant\_gene\_pairs.txt.gz & 54.4 \\
+Skin\_Sun\_Exposed\_Lower\_leg.v8.signif\_variant\_gene\_pairs.txt.gz & 66.6 \\
+Whole\_Blood.v8.signif\_variant\_gene\_pairs.txt.gz & 50.0 \\
+finngen\_R13\_L12\_ALOPECAREATA.gz & 753.6 \\
+finngen\_R13\_L12\_DERMATITISECZEMA.gz & 772.4 \\
+finngen\_R13\_L12\_PSORIASIS.gz & 767.8 \\
+finngen\_R13\_L12\_VITILIGO.gz & 741.9 \\
+\end{longtable}
+\end{landscape}
+
+
+\clearpage
+\section*{Supplementary Figure S1. OpenGWAS external directional concordance for TYK2}
+\begin{center}
+\includegraphics[width=0.96\linewidth,height=0.78\textheight,keepaspectratio]{figureS1_opengwas_forest_plot.pdf}
+\end{center}
+\noindent\footnotesize Each row is a tissue-specific Wald ratio derived from an external outcome association and the corresponding GTEx TYK2 exposure estimate. The vertical dashed line is OR = 1. The rows are directionally informative but are not statistically independent.
+\end{document}

@@ -1,0 +1,58 @@
+target_gene,tissue,tissue_label,instrument_status,variant_id,chrom,pos,ref,alt,beta_exposure,se_exposure,p_exposure,maf,ma_samples,f_stat,tier
+JAK1,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr1_64883861_A_G_b38,1,64883861.0,A,G,-0.16021,0.025099,4.34863e-10,0.27176,234.0,40.74425710855794,primary
+JAK1,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK1,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr1_65052771_G_A_b38,1,65052771.0,G,A,0.105549,0.0173404,2.05402e-09,0.297015,334.0,37.050154503154594,primary
+JAK2,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK2,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK2,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK3,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK3,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+JAK3,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+TYK2,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr19_10354011_A_G_b38,19,10354011.0,A,G,0.144718,0.0188355,9.90423e-14,0.447776,351.0,59.0324485514662,primary
+TYK2,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,primary_p_lt_5e-8,chr19_10349293_G_A_b38,19,10349293.0,G,A,0.139428,0.0207221,4.42173e-11,0.28595,287.0,45.272290236252815,primary
+TYK2,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr19_10354011_A_G_b38,19,10354011.0,A,G,0.107488,0.0128757,4.7969e-16,0.453731,477.0,69.69125188069683,primary
+IL4R,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL4R,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL4R,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr16_27315893_T_G_b38,16,27315893.0,T,G,0.177637,0.0148223,8.04305e-30,0.388806,419.0,143.6268586920835,primary
+IL13,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL13,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL13,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL17A,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL17A,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL17A,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL17RA,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr22_17105741_G_A_b38,22,17105741.0,G,A,0.323921,0.0201205,2.53466e-46,0.484526,379.0,259.17951407949386,primary
+IL17RA,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,primary_p_lt_5e-8,chr22_17105741_G_A_b38,22,17105741.0,G,A,0.449618,0.0212456,1.12061e-72,0.48595,448.0,447.8673238872925,primary
+IL17RA,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr22_17105693_C_G_b38,22,17105693.0,C,G,0.110339,0.0118774,2.81357e-19,0.491045,495.0,86.30089944031891,primary
+IL23A,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL23A,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL23A,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL23R,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL23R,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL23R,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+TNF,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+TNF,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+TNF,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4A,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4A,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,exploratory_5e-8_to_1e-5,chr19_10430708_C_G_b38,19,10430708.0,C,G,-0.278024,0.0594177,3.65406e-06,0.0239669,29.0,21.894392597050295,exploratory_relaxed
+PDE4A,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr19_10432131_G_A_b38,19,10432131.0,G,A,0.700297,0.0635002,7.049890000000001e-26,0.0186567,24.0,121.62261739466875,primary
+PDE4B,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,exploratory_5e-8_to_1e-5,chr1_66286524_A_G_b38,1,66286524.0,A,G,0.163251,0.0304848,1.37011e-07,0.181818,167.0,28.6777451013725,exploratory_relaxed
+PDE4B,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,exploratory_5e-8_to_1e-5,chr1_66273073_C_T_b38,1,66273073.0,C,T,0.12508,0.0262131,2.36054e-06,0.490083,436.0,22.76873888400615,exploratory_relaxed
+PDE4B,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4C,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr19_18206151_C_T_b38,19,18206151.0,C,T,0.273449,0.0471547,1.26321e-08,0.345261,301.0,33.62812914494649,primary
+PDE4C,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,exploratory_5e-8_to_1e-5,chr19_18215381_G_T_b38,19,18215381.0,G,T,0.229644,0.0420233,7.11945e-08,0.326446,327.0,29.862756879842788,exploratory_relaxed
+PDE4C,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4D,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4D,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+PDE4D,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL36RN,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+IL36RN,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,exploratory_5e-8_to_1e-5,chr2_113080188_T_G_b38,2,113080188.0,T,G,-0.112962,0.0236726,2.35841e-06,0.346281,337.0,22.77051359476857,exploratory_relaxed
+IL36RN,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+TSLP,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr5_111073369_C_G_b38,5,111073369.0,C,G,-0.498888,0.0346289,6.36785e-39,0.441006,358.0,207.55286041905896,primary
+TSLP,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,primary_p_lt_5e-8,chr5_111073007_C_T_b38,5,111073007.0,C,T,-0.593066,0.038243,4.59817e-45,0.291736,304.0,240.49283778819188,primary
+TSLP,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+FLG,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr1_152288539_T_TG_b38,1,152288539.0,T,TG,-0.207972,0.035417,8.40313e-09,0.226306,192.0,34.48150346426308,primary
+FLG,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,primary_p_lt_5e-8,chr1_152242307_T_C_b38,1,152242307.0,T,C,0.206297,0.0277989,4.5977e-13,0.212397,222.0,55.07196876969731,primary
+FLG,Whole_Blood,Whole blood,no_eligible_row_in_significant_pair_file,,,,,,,,,,,,
+CARD14,Skin_Not_Sun_Exposed_Suprapubic,Skin not sun-exposed suprapubic,primary_p_lt_5e-8,chr17_79607855_C_G_b38,17,79607855.0,C,G,0.88106,0.152083,1.30351e-08,0.00870406,8.0,33.56213869921952,primary
+CARD14,Skin_Sun_Exposed_Lower_leg,Skin sun-exposed lower leg,primary_p_lt_5e-8,chr17_80147951_G_A_b38,17,80147951.0,G,A,0.202588,0.0327365,1.20968e-09,0.0760331,88.0,38.296840273095825,primary
+CARD14,Whole_Blood,Whole blood,primary_p_lt_5e-8,chr17_80211843_G_A_b38,17,80211843.0,G,A,0.347979,0.0392759,9.049390000000001e-18,0.434328,449.0,78.49713032986965,primary

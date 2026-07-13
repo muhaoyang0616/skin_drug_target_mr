@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the associated article and this software release."
+title: "Tissue-aware cis-eQTL Mendelian randomization screen of dermatologic immune pathway genes"
+type: software
+version: 1.0.0
+date-released: 2026-07-12
+repository-code: "https://github.com/muhaoyang0616/skin_drug_target_mr"
+url: "https://github.com/muhaoyang0616/skin_drug_target_mr/releases/tag/v1.0.0"
+license: MIT
+authors:
+  - family-names: Mu
+    given-names: Haoyang
+    orcid: "https://orcid.org/0009-0006-1909-2429"
+  - family-names: Jin
+    given-names: Shan
+    orcid: "https://orcid.org/0000-0002-6268-1759"
+preferred-citation:
+  type: article
+  title: "Genetic Tractability of Clinically Relevant Dermatologic Immune Pathway Genes: A Tissue-Aware cis-eQTL Mendelian Randomization Screen"
+  authors:
+    - family-names: Mu
+      given-names: Haoyang
+    - family-names: Jin
+      given-names: Shan
+  year: 2026

@@ -1,0 +1,65 @@
+\section*{Material and Methods}
+
+\subsection*{Study Design}
+
+This two-sample MR study was reported with reference to STROBE-MR guidance.\textsuperscript{\cite{skrivankova2021strobemr,burgess2021mr}} The workflow comprised target-panel definition, tissue-specific cis-eQTL instrument selection, harmonization with four FinnGen outcomes, single-SNP MR with multiple-testing correction, and focused validation of the established TYK2 signal (Figure~1). All inputs were publicly available, de-identified summary statistics. The study was not prospectively registered, and no analysis protocol was deposited before the analyses were performed.
+
+\subsection*{Target Gene Panel}
+
+We curated 19 genes spanning clinically relevant dermatologic immune pathways: \textit{JAK1}, \textit{JAK2}, \textit{JAK3}, \textit{TYK2}, \textit{IL4R}, \textit{IL13}, \textit{IL17A}, \textit{IL17RA}, \textit{IL23A}, \textit{IL23R}, \textit{TNF}, \textit{PDE4A}, \textit{PDE4B}, \textit{PDE4C}, \textit{PDE4D}, \textit{IL36RN}, \textit{TSLP}, \textit{FLG}, and \textit{CARD14}. The panel included direct drug targets, members of drug-target families, pathway genes, and the barrier or disease-relevant controls \textit{FLG} and \textit{CARD14}; it was not intended to imply that every encoded protein is directly targeted by an approved dermatologic therapy. Gene symbols were mapped to GENCODE v26 Ensembl identifiers. Because the study was not preregistered and the panel was not derived from a systematic review, inference is limited to this curated set rather than all dermatologic drug targets.
+
+\subsection*{Exposure Data and Instrument Selection}
+
+GTEx v8 significant cis-eQTL variant--gene pair files were used for skin sun-exposed lower leg, skin not sun-exposed suprapubic, and whole blood.\textsuperscript{\cite{gtex2020}} These files contain GTEx-significant pairs rather than complete all-pairs cis summary statistics. Instrument-availability estimates are therefore conditional on the released significant-pair sets and may undercount nominal cis associations that were not included in those files. For the primary analysis, a candidate instrument required an eQTL \textit{p}-value $<5\times10^{-8}$ and an approximate F-statistic $>10$, where $F=(\beta_{\mathrm{exposure}}/SE_{\mathrm{exposure}})^2$.\textsuperscript{\cite{burgess2011weak}} Within each gene--tissue cell, the variant with the smallest eQTL \textit{p}-value was retained; exact ties were resolved by ascending GTEx variant identifier.
+
+No matched genotype LD reference panel was available. We therefore did not claim LD clumping and did not construct multi-SNP instruments. Each analysis used one deterministic lead cis-eQTL, an approach that avoids treating correlated variants as independent but cannot by itself exclude LD confounding by a distinct causal variant.\textsuperscript{\cite{gkatzionis2022cismr,lin2024cismr}} A separate exploratory analysis considered cells with no primary instrument but an eQTL \textit{p}-value $<10^{-5}$ and F $>10$. These relaxed-threshold tests were analyzed and corrected separately from the primary family.
+
+\subsection*{Outcome Data}
+
+Outcome summary statistics were obtained from FinnGen release R13.\textsuperscript{\cite{kurki2023finngen}} The endpoints were psoriasis (L12\_PSORIASIS; 13,309 cases and 481,187 controls), dermatitis and eczema (L12\_DERMATITISECZEMA; 72,371 cases and 427,815 controls), vitiligo (L12\_VITILIGO; 421 cases and 462,830 controls), and alopecia areata (L12\_ALOPECAREATA; 994 cases and 474,896 controls). FinnGen beta coefficients were treated as per-alternate-allele log odds ratios. GTEx and FinnGen are distinct resources, so participant overlap is not expected, although individual-level overlap could not be checked from summary data. The low case counts for vitiligo and alopecia areata were considered when interpreting null estimates; no formal power percentages were reported because a validated exposure R-squared and binary-outcome power model were not available.
+
+\subsection*{Instrumental-Variable Assumptions}
+
+The analysis relied on the three core instrumental-variable assumptions. Relevance was addressed by restricting instruments to cis-eQTLs that met the specified \textit{p}-value and F-statistic thresholds. Independence from exposure--outcome confounders could not be tested directly with summary statistics; cis restriction and the covariate-adjusted source GWAS reduce but do not eliminate this concern. The exclusion-restriction assumption---that the variant influences disease only through the measured gene-expression exposure---also cannot be verified for a single cis variant. Tissue comparison, locus inspection, and colocalization were therefore used as supporting assessments, but none can exclude horizontal pleiotropy or a distinct causal variant in linkage disequilibrium.
+
+\subsection*{Mendelian Randomization and Statistical Analysis}
+
+GTEx and FinnGen variants were matched by GRCh38 chromosome, position, reference allele, and alternate allele. Outcome effects were sign-flipped when the reference and alternate alleles were reversed. Variants absent from an outcome file were recorded as unmatched and were not imputed or replaced with proxies in the primary analysis. The analyses used the covariate-adjusted summary statistics released by each consortium; individual-level covariates were not refitted, and identical covariate sets across resources could not be guaranteed. For each matched variant, the Wald ratio was
+
+\begin{equation}
+\hat{\beta}_{\mathrm{MR}} =
+\frac{\hat{\beta}_{\mathrm{outcome}}}{\hat{\beta}_{\mathrm{exposure}}}.
+\label{eq:wald}
+\end{equation}
+
+The primary standard error followed the conventional first-order single-SNP approximation used by TwoSampleMR:
+
+\begin{equation}
+SE_{\mathrm{primary}} =
+\left|\frac{SE_{\mathrm{outcome}}}{\hat{\beta}_{\mathrm{exposure}}}\right|.
+\label{eq:se-primary}
+\end{equation}
+
+As a robustness analysis, we also calculated the full delta-method standard error including uncertainty in the SNP--exposure association:
+
+\begin{equation}
+SE_{\mathrm{delta}} =
+\sqrt{\frac{SE_{\mathrm{outcome}}^2}{\hat{\beta}_{\mathrm{exposure}}^2}
++ \frac{\hat{\beta}_{\mathrm{outcome}}^2SE_{\mathrm{exposure}}^2}
+{\hat{\beta}_{\mathrm{exposure}}^4}}.
+\label{eq:se-delta}
+\end{equation}
+
+Effects were exponentiated to odds ratios (ORs) with 95\% confidence intervals. Benjamini--Hochberg FDR correction was applied across all primary tests and, separately, across all relaxed-threshold tests.\textsuperscript{\cite{benjamini1995fdr}} FDR $<0.05$ was considered significant. Nominal \textit{p} $<0.05$ with FDR $\geq0.05$ was reported descriptively. Final verification used R 4.6.0 with TwoSampleMR 0.7.6, coloc 5.2.3, data.table 1.18.4, dplyr 1.2.1, yaml 2.3.12, readr 2.2.0, jsonlite 2.0.0, and ggplot2 4.0.3.\textsuperscript{\cite{hemani2018twosamplemr}} The optional OpenGWAS refresh used ieugwasr 1.1.0. The independent raw-data audit used Python 3.10.4 with pandas 2.3.3 and NumPy 2.2.6.
+
+\subsection*{TYK2 Validation and External Association Lookup}
+
+Because all primary FDR-significant rows represented TYK2, validation focused on this established positive-control locus. We verified each instrument's rank among GTEx significant TYK2 cis-eQTLs and ranked variants within the FinnGen psoriasis locus ($\pm500$ kb). We then extracted available non-FinnGen psoriasis or psoriatic-arthritis association records through OpenGWAS and recomputed tissue-specific Wald ratios using the corresponding GTEx exposure estimates. Only exact requested-variant matches were retained; one unresolved proxy result was excluded because the local export did not preserve the proxy SNP or its LD estimate. External records were treated as directional concordance rather than as statistically independent replication because overlap among contributing studies could not be excluded.
+
+\subsection*{Colocalization Analysis}
+
+GTEx significant-pair files do not contain complete locus-wide data, so full cis-eQTL summary statistics were obtained from three eQTL Catalogue GTEx v8 datasets: QTD000316 for sun-exposed skin, QTD000311 for non-sun-exposed skin, and QTD000356 for whole blood.\textsuperscript{\cite{kerimov2021eqtlcatalogue}} FinnGen psoriasis and eQTL data were aligned within a 1 Mb TYK2 window. Bayesian colocalization used the \textit{coloc} package with priors $p_1=10^{-4}$, $p_2=10^{-4}$, and $p_{12}=10^{-5}$.\textsuperscript{\cite{giambartolomei2014coloc}} The eQTL datasets were modeled as quantitative traits with sample sizes 602, 517, and 670 for QTD000316, QTD000311, and QTD000356, respectively, and with $sdY=1$; FinnGen psoriasis was modeled as a case--control trait with 13,309 cases and 481,187 controls. The \textit{coloc.abf} model assumes at most one causal variant per trait within the analyzed region; unmodeled allelic heterogeneity may affect posterior probabilities. PP.H4 represents a shared causal variant; PP.H3 represents two distinct causal variants; and PP.H2 represents association with the GWAS trait only. PP.H4 $\geq0.80$ was considered strong support and PP.H4 $\geq0.50$ supportive evidence.\textsuperscript{\cite{zuber2022coloc}} For TYK2 tissues with PP.H4 $\geq0.50$, \textit{coloc::sensitivity} varied $p_{12}$ across the evaluated range from $10^{-8}$ to $10^{-4}$ and assessed the rule PP.H4 $\geq0.50$; plots were not generated for base analyses below that support threshold. The relaxed-threshold PDE4A psoriasis signal was evaluated with the same locus-level framework but remained outside the primary analysis. The selected PDE4A MR instrument itself was absent from the eQTL Catalogue rows used for colocalization, so this analysis did not directly test whether the MR variant shared the psoriasis causal signal.
+
+\subsection*{Reproducibility Audit}
+
+All three GTEx files and all four FinnGen files were independently reread from the local compressed raw data. This audit regenerated instrument selection, allele harmonization, Wald estimates, confidence intervals, and both FDR families. The 68 primary results matched the saved R output with maximum absolute differences below $10^{-14}$ for beta, standard error, \textit{p}-value, and FDR. Reverse MR and Steiger directionality were not reported because the available GTEx files contain selected significant pairs rather than all-variant outcome summary statistics, and the stored \texttt{ma\_samples} field is not the tissue sample size required for a valid directionality calculation.

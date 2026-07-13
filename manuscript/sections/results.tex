@@ -1,0 +1,29 @@
+\section*{Results}
+
+\subsection*{Instrument Availability}
+
+The panel contained 57 gene--tissue cells. At the primary threshold, 18 cells (31.6\%) across nine genes had a lead cis-eQTL: five in sun-exposed skin, seven in non-sun-exposed skin, and six in whole blood (Figure~3; Table~1; Supplementary Table S2). Primary-instrument F-statistics ranged from 33.6 to 447.9. The PDE4A whole-blood lead variant was absent from all four FinnGen outcome files, leaving 17 analyzable cells across eight genes.
+
+The relaxed threshold added five cells: IL36RN in sun-exposed skin, PDE4A in sun-exposed skin, PDE4B in both skin tissues, and PDE4C in sun-exposed skin. Conditional coverage within the three GTEx significant-pair files was therefore 23 of 57 cells (40.4\%) across 11 genes. Eight genes had no eligible row in any tissue even at the relaxed threshold: \textit{JAK2}, \textit{JAK3}, \textit{IL13}, \textit{IL17A}, \textit{IL23A}, \textit{IL23R}, \textit{TNF}, and \textit{PDE4D}. These genes are untestable in the present significant-pair design; this is not evidence of no therapeutic effect or proof that no nominal cis association exists in complete all-pairs data.
+
+\subsection*{Primary MR Results}
+
+The 17 analyzable cells generated 68 primary Wald-ratio tests (Figure~2; Supplementary Table S3). Three rows reached FDR $<0.05$, all for TYK2 and psoriasis. Higher genetically proxied TYK2 expression was associated with lower psoriasis risk in sun-exposed skin (OR 0.454, 95\% CI 0.371--0.557; \textit{p} $=2.50\times10^{-14}$; FDR $=1.70\times10^{-12}$), non-sun-exposed skin (OR 0.604, 95\% CI 0.510--0.716; \textit{p} $=5.91\times10^{-9}$; FDR $=1.34\times10^{-7}$), and whole blood (OR 0.507, 95\% CI 0.403--0.637; \textit{p} $=5.91\times10^{-9}$; FDR $=1.34\times10^{-7}$).
+
+Two additional estimates were nominally associated but did not survive FDR correction: CARD14 expression in whole blood with psoriasis (OR 1.106, 95\% CI 1.031--1.187; \textit{p} $=0.00519$; FDR $=0.0883$) and JAK1 expression in whole blood with dermatitis and eczema (OR 0.870, 95\% CI 0.765--0.991; \textit{p} $=0.0356$; FDR $=0.484$). No vitiligo or alopecia areata result was FDR-significant.
+
+The full delta-method sensitivity analysis retained all three TYK2 signals, with FDR values from $3.10\times10^{-5}$ to $7.94\times10^{-5}$, and did not change any result category (Supplementary Table S8).
+
+\subsection*{TYK2 Locus and External Association Lookup}
+
+The non-sun-exposed skin and whole-blood estimates used rs280497, whereas the sun-exposed skin estimate used rs35251378. Each was the rank-1 TYK2 cis-eQTL in its respective GTEx tissue (Supplementary Table S5). Within the FinnGen psoriasis locus, rs34536443 was the lead variant; rs35251378 ranked fourth and rs280497 ranked eleventh. These ranks establish that the MR instruments lie within the associated TYK2 locus but do not by themselves establish that the variants are interchangeable or in the same LD block.
+
+Eight non-FinnGen records were obtained from OpenGWAS, covering psoriasis, psoriasis vulgaris, self-reported psoriasis, and psoriatic arthritis. Across these records, 23 exact-variant tissue-specific Wald-ratio estimates were available, all with a protective direction (Supplementary Table S6 and Supplementary Figure S1). One additional proxy-supported export was excluded because the proxy SNP and LD estimate were not retained locally. This concordance provides external directional support but does not constitute independent replication: the rows reuse two variants across three tissues, and contributing GWAS samples may overlap.
+
+\subsection*{Tissue-Resolved Colocalization}
+
+TYK2 colocalization was tissue-dependent (Figure~4; Supplementary Table S7). Sun-exposed skin showed strong support for a shared signal (2,474 overlapping variants; PP.H4 0.825). Whole blood showed supportive evidence (2,494 variants; PP.H4 0.782). Non-sun-exposed skin did not support colocalization (1,969 variants; PP.H4 0.220), with posterior probability concentrated on the GWAS-only model (PP.H2 0.653). Prior-sensitivity checks for sun-exposed skin and whole blood retained PP.H4 $\geq0.50$ at the analysis value $p_{12}=10^{-5}$ and at larger evaluated $p_{12}$ values, but fell below 0.50 at sufficiently smaller evaluated $p_{12}$ values; the support is therefore prior-dependent. A plot was not generated for non-sun-exposed skin because its base PP.H4 was below 0.50. Thus, the TYK2 locus was recovered in all three MR analyses, but shared-variant support was strongest in sun-exposed skin and whole blood.
+
+\subsection*{Separate Relaxed-Threshold Analysis}
+
+The five relaxed-only cells generated 20 tests corrected as a separate family (Supplementary Table S4). PDE4A expression in sun-exposed skin was associated with psoriasis (OR 2.832, 95\% CI 1.883--4.257; \textit{p} $=5.65\times10^{-7}$; relaxed-family FDR $=1.13\times10^{-5}$). Its exposure instrument was below genome-wide significance (\textit{p} $=3.65\times10^{-6}$; F $=21.9$), and the locus-level colocalization analysis did not support a shared psoriasis causal variant (PP.H4 0.108; PP.H2 0.753). The selected MR instrument was absent from the PDE4A eQTL Catalogue rows used for colocalization, so this analysis did not directly test that variant and should be regarded as non-supportive rather than definitive. This result is therefore exploratory and was not promoted to the primary findings. JAK2 did not meet either the primary or relaxed instrument threshold and was not analyzed in the threshold-defined MR families.

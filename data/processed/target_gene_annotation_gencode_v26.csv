@@ -1,0 +1,20 @@
+gene,gene_id,gene_name,chr,start,end,gene_type,drug_class,skin_relevance,priority
+JAK1,ENSG00000162434,JAK1,chr1,64833229,64966504,protein_coding,JAK inhibitor,Atopic dermatitis and psoriasis pathway target; approved or investigational JAK blockade,high
+JAK2,ENSG00000096968,JAK2,chr9,4984390,5128183,protein_coding,JAK inhibitor,Cytokine signaling target relevant to psoriasis vitiligo and alopecia areata,high
+JAK3,ENSG00000105639,JAK3,chr19,17824780,17848071,protein_coding,JAK inhibitor,Lymphocyte cytokine signaling target relevant to atopic dermatitis alopecia areata and vitiligo,high
+TYK2,ENSG00000105397,TYK2,chr19,10350529,10380676,protein_coding,TYK2 inhibitor,IL23 and type I interferon pathway target with psoriasis drug relevance,high
+IL4R,ENSG00000077238,IL4R,chr16,27313668,27364778,protein_coding,IL4/IL13 pathway biologic,Approved biologic target in type 2 atopic dermatitis,high
+IL13,ENSG00000169194,IL13,chr5,132656263,132661110,protein_coding,IL13 biologic,Type 2 inflammation target in atopic dermatitis,high
+IL17A,ENSG00000112115,IL17A,chr6,52186387,52190638,protein_coding,IL17 biologic,Approved biologic target in psoriasis,high
+IL17RA,ENSG00000177663,IL17RA,chr22,17084954,17115694,protein_coding,IL17 receptor biologic,Approved pathway target in psoriasis,high
+IL23A,ENSG00000110944,IL23A,chr12,56334174,56340410,protein_coding,IL23 biologic,IL23 pathway target in psoriasis,high
+IL23R,ENSG00000162594,IL23R,chr1,67138907,67259979,protein_coding,IL23 pathway target,Genetic and therapeutic relevance in psoriasis and immune disease,high
+TNF,ENSG00000232810,TNF,chr6,31575567,31578336,protein_coding,TNF inhibitor,Established inflammatory skin disease biologic target especially psoriasis,high
+PDE4A,ENSG00000065989,PDE4A,chr19,10416773,10469631,protein_coding,PDE4 inhibitor,PDE4 inhibitor target family member relevant to psoriasis and atopic dermatitis,medium
+PDE4B,ENSG00000184588,PDE4B,chr1,65792514,66374579,protein_coding,PDE4 inhibitor,PDE4 inhibitor target family member relevant to inflammatory cytokine regulation,medium
+PDE4C,ENSG00000105650,PDE4C,chr19,18207961,18255419,protein_coding,PDE4 inhibitor,PDE4 inhibitor target family member included for PDE4 family coverage,medium
+PDE4D,ENSG00000113448,PDE4D,chr5,58969038,60522120,protein_coding,PDE4 inhibitor,PDE4 inhibitor target family member relevant to inflammatory signaling,medium
+IL36RN,ENSG00000136695,IL36RN,chr2,113058638,113065382,protein_coding,IL36 pathway target,Pustular psoriasis and IL36 pathway relevance,medium
+TSLP,ENSG00000145777,TSLP,chr5,111070062,111078024,protein_coding,TSLP biologic,Upstream epithelial alarmin relevant to atopic dermatitis,medium
+FLG,ENSG00000143631,FLG,chr1,152302175,152325203,protein_coding,Barrier gene,Skin barrier and atopic dermatitis genetic relevance; not classic drug target,medium
+CARD14,ENSG00000141527,CARD14,chr17,80169992,80209331,protein_coding,NF-kB pathway gene,Familial psoriasis and keratinocyte immune signaling relevance,medium

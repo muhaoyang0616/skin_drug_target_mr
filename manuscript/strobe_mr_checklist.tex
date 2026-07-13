@@ -1,0 +1,97 @@
+% STROBE-MR checklist for the final CCID submission.
+\documentclass[10pt,a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\renewcommand{\arraystretch}{1.16}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{STROBE-MR Checklist}}\\[6pt]
+\textit{Genetic Tractability of Clinically Relevant Dermatologic Immune Pathway Genes: A Tissue-Aware cis-eQTL Mendelian Randomization Screen}\\[4pt]
+MU Haoyang and JIN Shan
+\end{center}
+
+\noindent\small This checklist follows the 20-item STROBE-MR statement. ``Partial'' identifies a reporting or design limitation that is stated transparently in the manuscript; it does not mean that an unsupported analysis was performed.
+
+\footnotesize
+\begin{longtable}{L{0.8cm}L{5.4cm}L{7.0cm}L{11.0cm}}
+\toprule
+\textbf{Item} & \textbf{STROBE-MR requirement} & \textbf{Location and status} & \textbf{Relevant reporting in this submission} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Item} & \textbf{STROBE-MR requirement} & \textbf{Location and status} & \textbf{Relevant reporting in this submission} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+1 & Identify MR as the study design in the title and/or abstract. & Title and Abstract; \textbf{Full}. & The title states cis-eQTL Mendelian randomization, and the structured abstract identifies the design, exposure source, outcomes, estimator, and main findings. \\
+
+2 & Explain the scientific background and why MR is useful. & Introduction; \textbf{Full}. & The clinical need for target prioritization, tissue-specific gene expression, instrument scarcity, and the TYK2 positive-control rationale are described. \\
+
+3 & State objectives and prespecified causal hypotheses; clarify that causal interpretation depends on assumptions. & End of Introduction and Methods, Instrumental-Variable Assumptions; \textbf{Partial}. & The target panel, tissues, thresholds, and TYK2 validation objective are defined. No simple pharmacologic-direction hypothesis is claimed. The manuscript states that causal interpretation depends on relevance, independence, and exclusion restriction, but the study was not prospectively registered. \\
+
+4 & Describe study design and all data sources: setting, participants, variant measurement/QC, exposure/outcome assessment, and ethics. & Methods, Study Design; Exposure Data; Outcome Data; Ethics Approval; Supplementary Tables S1--S2; \textbf{Partial}. & GTEx v8 tissues, FinnGen R13 endpoints and case/control counts, GRCh38 matching, public summary-statistic design, and source-consortium ethics are reported. Individual-level recruitment, diagnostic coding details, and GTEx participant characteristics remain in the cited source publications rather than being re-derived here. \\
+
+5 & State the core instrumental-variable assumptions and assumptions for additional analyses. & Methods, Instrumental-Variable Assumptions and Colocalization Analysis; \textbf{Full}. & Relevance, independence, and exclusion restriction are stated. The single-causal-variant and $sdY=1$ assumptions of \textit{coloc.abf}, plus the potential effects of allelic heterogeneity and scale misspecification, are reported. The manuscript explains which assumptions cannot be verified with a single cis variant and that colocalization and tissue comparison are supporting rather than definitive checks. \\
+
+6 & Describe main statistical methods: scales, variant handling, estimator, covariates, missing data, and multiple testing. & Methods, Exposure Data, Outcome Data, and Mendelian Randomization; \textbf{Full}. & Instrument thresholds, F statistic, deterministic lead selection, allele matching/sign reversal, unmatched-variant handling without proxy replacement, Wald ratio, first-order and delta-method uncertainty, odds-ratio scale, source covariate limitations, and separate BH-FDR families are reported. \\
+
+7 & Describe assessment of the instrumental-variable assumptions. & Methods, Instrumental-Variable Assumptions; TYK2 Validation; Colocalization; \textbf{Partial}. & Instrument strength, cis restriction, tissue comparison, locus ranking, external association lookup, and colocalization are reported. Independence and absence of horizontal pleiotropy cannot be proven from the available summary statistics. \\
+
+8 & Describe sensitivity and additional analyses. & Methods, MR Analysis; TYK2 Validation; Colocalization; Reproducibility Audit; \textbf{Full}. & Full delta-method standard errors, separately corrected relaxed-threshold tests, external directional concordance, tissue-resolved colocalization, and an independent raw-data reproduction are described. \\
+
+9 & Report software and preregistration. & Methods, MR Analysis and Study Design; \textbf{Partial}. & R 4.6.0, TwoSampleMR 0.7.6, coloc 5.2.3, data.table 1.18.4, dplyr 1.2.1, yaml 2.3.12, readr 2.2.0, jsonlite 2.0.0, ggplot2 4.0.3, optional ieugwasr 1.1.0, Python 3.10.4, pandas 2.3.3, and NumPy 2.2.6 are reported. The study was not prospectively registered, which is stated explicitly. \\
+
+10 & Report descriptive data, analysis flow, two-sample comparability, and participant overlap. & Methods, Outcome Data; Results, Instrument Availability; Figure 1; Supplementary Tables S1--S2; \textbf{Partial}. & The flow from 57 cells to 18 primary instruments, 17 analyzable cells, 68 primary tests, and 20 relaxed tests is reported, as are FinnGen case/control counts. GTEx and FinnGen are distinct resources and overlap is not expected, but individual-level overlap and full population comparability cannot be checked from summary data. \\
+
+\end{longtable}
+
+\newpage
+\begin{longtable}{L{0.8cm}L{5.4cm}L{7.0cm}L{11.0cm}}
+\toprule
+\textbf{Item} & \textbf{STROBE-MR requirement} & \textbf{Location and status} & \textbf{Relevant reporting in this submission} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Item} & \textbf{STROBE-MR requirement} & \textbf{Location and status} & \textbf{Relevant reporting in this submission} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+11 & Report variant-exposure, variant-outcome, and MR estimates with uncertainty and appropriate plots. & Results; Figures 2 and 4; Supplementary Tables S3--S6; \textbf{Full}. & Machine-readable tables include exposure and outcome betas, standard errors, alleles, Wald estimates, ORs, confidence intervals, P values, and FDR values. Absolute-risk translation is not appropriate for the gene-expression scale used here. \\
+
+12 & Report assessment of assumptions and additional statistics. & Results, Instrument Availability; TYK2 Locus; Colocalization; Discussion, Limitations; \textbf{Partial}. & F statistics, eQTL and locus ranks, and colocalization posteriors are reported. Heterogeneity statistics, MR-Egger intercepts, and MR-PRESSO are not estimable for single-SNP analyses. \\
+
+13 & Report sensitivity/additional analyses, directionality assessment, non-MR comparisons, and additional plots where relevant. & Results, delta sensitivity, external association lookup, colocalization, and relaxed-threshold analysis; Supplementary Figure S1 and Table S7; \textbf{Partial}. & Performed additional analyses are summarized, including the status and interpretation of TYK2 colocalization prior-sensitivity checks. Reverse MR and Steiger directionality were not validly estimable from significant-pair-only GTEx files and are not presented. Leave-one-out analyses and multi-variant heterogeneity plots are not applicable to single-SNP instruments. \\
+
+14 & Summarize key results in relation to the objectives. & Discussion, first paragraph; Conclusions; \textbf{Full}. & The manuscript distinguishes recovery of the TYK2 locus from the broader finding of conditional instrument scarcity. \\
+
+15 & Discuss limitations, potential bias, and imprecision. & Discussion, Limitations; \textbf{Full}. & Single-variant pleiotropy, LD confounding, non-independence of TYK2 rows, significant-pair coverage, unavailable directionality/power analyses, small vitiligo and alopecia case counts, healthy bulk tissue, ancestry, external-study overlap, target-panel composition, and lack of preregistration are discussed. \\
+
+16 & Interpret meaning, mechanism/gene-intervention equivalence, and clinical relevance cautiously. & Discussion, TYK2 interpretation and Clinical Implications for Target Selection; \textbf{Full}. & The manuscript explicitly states that transcript abundance does not equal kinase activity, that the MR OR is not a drug-effect estimate, and that absent instruments and non-colocalized relaxed signals require different clinical interpretations. \\
+
+17 & Discuss generalizability across populations, exposure timing, and exposure levels. & Discussion, Limitations and Clinical Implications; \textbf{Partial}. & Ancestry, healthy bulk tissue, cell-state specificity, and external overlap are discussed. Lifelong genetic effects cannot be assumed to represent treatment timing, dose, duration, or expression changes outside the genetically observed range. \\
+
+18 & Describe funding and the role of funders. & Funding and Acknowledgments; \textbf{Pending author confirmation}. & The manuscript currently reports no specific funding and therefore no funder role. Both authors must confirm this statement before submission. Source consortia are acknowledged and cited. \\
+
+19 & Provide data and code or state where they can be accessed. & Data Availability; submission supplementary data; \textbf{Partial pending public deposit}. & Public source URLs and eQTL Catalogue dataset identifiers are provided. Corrected scripts and machine-readable results accompany the submission. SHA-256 checksums for the seven core GTEx/FinnGen raw inputs and audit outputs are included in the draft public archive. A versioned GitHub/Zenodo deposit will be completed by the authors before publication and the final DOI/URL inserted when available. \\
+
+20 & Declare conflicts of interest. & Competing Interests; \textbf{Pending author confirmation}. & The manuscript currently declares no financial or non-financial competing interests. Both authors must confirm this statement before submission. \\
+
+\end{longtable}
+
+\noindent\footnotesize Reference: Skrivankova VW, et al. Strengthening the Reporting of Observational Studies in Epidemiology Using Mendelian Randomisation (STROBE-MR). \textit{BMJ}. 2021;375:n2233.
+
+\end{document}

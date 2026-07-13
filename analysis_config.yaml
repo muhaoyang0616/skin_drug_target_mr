@@ -1,0 +1,109 @@
+project:
+  name: skin_drug_target_mr
+  raw_dir: data/raw
+  processed_dir: data/processed
+  results_dir: results
+  figures_dir: figures
+  tables_dir: tables
+  manuscript_dir: manuscript
+
+targets:
+  target_gene_file: data/target_genes/skin_druggable_targets.csv
+
+data:
+  finngen:
+    manifest_path: data/raw/finngen/finngen_manifest.tsv
+    manifest_url: https://storage.googleapis.com/finngen-public-data-r13/summary_stats/finngen_R13_manifest.tsv
+    summary_stats_base_url: https://storage.googleapis.com/finngen-public-data-r13/summary_stats/
+    outcome_summary_dir: data/raw/finngen/outcomes
+    outcome_index_path: data/raw/finngen/outcome_files.csv
+    locus_dir: data/raw/finngen/loci
+  eqtlgen:
+    cis_eqtl_path: data/raw/eqtlgen/eqtlgen_cis_eqtls.txt.gz
+    gene_annotation_path:
+    locus_dir: data/raw/eqtlgen/loci
+    allow_z_as_beta: false
+    primary: false
+  gtex:
+    primary: true
+    raw_dir: data/raw/gtex
+    tar_url: https://storage.googleapis.com/adult-gtex/bulk-qtl/v8/single-tissue-cis-qtl/GTEx_Analysis_v8_eQTL.tar
+    tar_file: data/raw/gtex/GTEx_Analysis_v8_eQTL.tar
+    tissues:
+      Skin_Sun_Exposed_Lower_leg:
+        label: Skin sun-exposed lower leg
+        file: data/raw/gtex/GTEx_Analysis_v8_eQTL/Skin_Sun_Exposed_Lower_leg.v8.signif_variant_gene_pairs.txt.gz
+      Skin_Not_Sun_Exposed_Suprapubic:
+        label: Skin not sun-exposed suprapubic
+        file: data/raw/gtex/GTEx_Analysis_v8_eQTL/Skin_Not_Sun_Exposed_Suprapubic.v8.signif_variant_gene_pairs.txt.gz
+      Whole_Blood:
+        label: Whole blood
+        file: data/raw/gtex/GTEx_Analysis_v8_eQTL/Whole_Blood.v8.signif_variant_gene_pairs.txt.gz
+  annotations:
+    gencode_v26_url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_26/gencode.v26.annotation.gtf.gz
+    gencode_v26_gtf: data/raw/annotations/gencode.v26.annotation.gtf.gz
+    target_gene_annotation: data/processed/target_gene_annotation_gencode_v26.csv
+  pqtl:
+    enabled: false
+    instrument_path:
+    notes: optional module placeholder
+
+endpoint_search:
+  terms:
+    psoriasis:
+      - psoriasis
+      - psoriatic
+    atopic_dermatitis:
+      - atopic dermatitis
+      - eczema
+      - dermatitis
+    vitiligo:
+      - vitiligo
+    alopecia_areata:
+      - alopecia areata
+      - alopecia
+    hidradenitis:
+      - hidradenitis
+    acne:
+      - acne
+    rosacea:
+      - rosacea
+  primary_diseases:
+    - psoriasis
+    - atopic_dermatitis
+    - vitiligo
+    - alopecia_areata
+
+instruments:
+  cis_window_kb: 100
+  pval_threshold: 5.0e-8
+  pval_sensitivity_threshold: 1.0e-5
+  f_stat_min: 10
+  clump_r2: 0.01
+  clump_kb: 10000
+  use_local_plink: false
+  plink_bin:
+  bfile:
+
+mr:
+  harmonise_action: 2
+  min_snps_ivw: 2
+  nominal_p_threshold: 0.05
+  fdr_method: BH
+  top_hit_fdr_threshold: 0.05
+
+smr:
+  smr_p_threshold: 0.05
+  heidi_p_threshold: 0.01
+  smr_result_dir: results/smr
+
+coloc:
+  enabled: true
+  window_kb: 500
+  p1: 1.0e-4
+  p2: 1.0e-4
+  p12: 1.0e-5
+  pp_h4_support: 0.50
+  pp_h4_strong: 0.80
+  outcome_type: cc
+  exposure_type: quant

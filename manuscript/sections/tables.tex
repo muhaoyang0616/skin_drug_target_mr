@@ -1,0 +1,42 @@
+\clearpage
+\section*{Tables}
+
+\begin{table}[H]
+\centering
+\caption{Cis-eQTL instrument availability across 19 genes and three GTEx v8 tissues.}
+\label{tab:1}
+\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Gene} & \textbf{Sun-exposed skin} & \textbf{Non-sun-exposed skin} & \textbf{Whole blood} & \textbf{Primary tissues} & \textbf{Any tissues} \\
+\midrule
+\textit{JAK1}    & -- & P  & P  & 2 & 2 \\
+\textit{JAK2}    & -- & -- & -- & 0 & 0 \\
+\textit{JAK3}    & -- & -- & -- & 0 & 0 \\
+\textit{TYK2}    & P  & P  & P  & 3 & 3 \\
+\textit{IL4R}    & -- & -- & P  & 1 & 1 \\
+\textit{IL13}    & -- & -- & -- & 0 & 0 \\
+\textit{IL17A}   & -- & -- & -- & 0 & 0 \\
+\textit{IL17RA}  & P  & P  & P  & 3 & 3 \\
+\textit{IL23A}   & -- & -- & -- & 0 & 0 \\
+\textit{IL23R}   & -- & -- & -- & 0 & 0 \\
+\textit{TNF}     & -- & -- & -- & 0 & 0 \\
+\textit{PDE4A}   & E  & -- & P\textsuperscript{a} & 1 & 2 \\
+\textit{PDE4B}   & E  & E  & -- & 0 & 2 \\
+\textit{PDE4C}   & E  & P  & -- & 1 & 2 \\
+\textit{PDE4D}   & -- & -- & -- & 0 & 0 \\
+\textit{IL36RN}  & E  & -- & -- & 0 & 1 \\
+\textit{TSLP}    & P  & P  & -- & 2 & 2 \\
+\textit{FLG}     & P  & P  & -- & 2 & 2 \\
+\textit{CARD14}  & P  & P  & P  & 3 & 3 \\
+\midrule
+\textbf{Total cells} & \textbf{5 P + 4 E} & \textbf{7 P + 1 E} & \textbf{6 P} & \textbf{18 / 57} & \textbf{23 / 57} \\
+\bottomrule
+\end{tabular}
+}
+
+\vspace{4pt}
+\noindent\footnotesize P, primary instrument (\textit{p} $<5\times10^{-8}$ and F $>10$); E, exploratory relaxed-only instrument (\textit{p} $<10^{-5}$ and F $>10$ in a cell without a primary instrument); --, no eligible row in the analyzed GTEx significant-pair file at either threshold. \textsuperscript{a}The PDE4A whole-blood primary variant was absent from all four FinnGen outcome files and did not generate an MR estimate. Variant-level details are provided in Supplementary Table S2.
+\end{table}
+\clearpage

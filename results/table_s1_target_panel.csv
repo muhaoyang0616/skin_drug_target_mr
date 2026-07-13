@@ -1,0 +1,20 @@
+gene,drug_class,skin_relevance,priority,panel_category
+JAK1,JAK inhibitor,Atopic dermatitis and psoriasis pathway target; approved or investigational JAK blockade,high,Drug-target family / signaling gene
+JAK2,JAK inhibitor,Cytokine signaling target relevant to psoriasis vitiligo and alopecia areata,high,Drug-target family / signaling gene
+JAK3,JAK inhibitor,Lymphocyte cytokine signaling target relevant to atopic dermatitis alopecia areata and vitiligo,high,Drug-target family / signaling gene
+TYK2,TYK2 inhibitor,IL23 and type I interferon pathway target with psoriasis drug relevance,high,Direct target / signaling gene
+IL4R,IL4/IL13 pathway biologic,Approved biologic target in type 2 atopic dermatitis,high,Direct target
+IL13,IL13 biologic,Type 2 inflammation target in atopic dermatitis,high,Direct target
+IL17A,IL17 biologic,Approved biologic target in psoriasis,high,Direct target
+IL17RA,IL17 receptor biologic,Approved pathway target in psoriasis,high,Direct target
+IL23A,IL23 biologic,IL23 pathway target in psoriasis,high,Direct target component
+IL23R,IL23 pathway target,Genetic and therapeutic relevance in psoriasis and immune disease,high,Pathway receptor
+TNF,TNF inhibitor,Established inflammatory skin disease biologic target especially psoriasis,high,Direct target
+PDE4A,PDE4 inhibitor,PDE4 inhibitor target family member relevant to psoriasis and atopic dermatitis,medium,Drug-target family member
+PDE4B,PDE4 inhibitor,PDE4 inhibitor target family member relevant to inflammatory cytokine regulation,medium,Drug-target family member
+PDE4C,PDE4 inhibitor,PDE4 inhibitor target family member included for PDE4 family coverage,medium,Drug-target family member
+PDE4D,PDE4 inhibitor,PDE4 inhibitor target family member relevant to inflammatory signaling,medium,Drug-target family member
+IL36RN,IL36 pathway target,Pustular psoriasis and IL36 pathway relevance,medium,Disease-pathway gene
+TSLP,TSLP biologic,Upstream epithelial alarmin relevant to atopic dermatitis,medium,Direct target
+FLG,Barrier gene,Skin barrier and atopic dermatitis genetic relevance; not classic drug target,medium,Barrier-gene control
+CARD14,NF-kB pathway gene,Familial psoriasis and keratinocyte immune signaling relevance,medium,Disease-pathway control
