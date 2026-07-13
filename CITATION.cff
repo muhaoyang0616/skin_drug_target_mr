@@ -6,6 +6,10 @@ version: 1.0.0
 date-released: 2026-07-12
 repository-code: "https://github.com/muhaoyang0616/skin_drug_target_mr"
 url: "https://github.com/muhaoyang0616/skin_drug_target_mr/releases/tag/v1.0.0"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21331678"
+    description: "Archived versioned release on Zenodo"
 license: MIT
 authors:
   - family-names: Mu
