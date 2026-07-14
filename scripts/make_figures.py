@@ -114,36 +114,82 @@ def save(fig: plt.Figure, stem: str) -> None:
 
 def add_box(ax, xy, width, height, title, lines, color, title_color="white"):
     x, y = xy
+    header_height = 0.072
     box = FancyBboxPatch(
         (x, y),
         width,
         height,
-        boxstyle="round,pad=0.012,rounding_size=0.015",
+        boxstyle="round,pad=0.008,rounding_size=0.012",
         linewidth=1.2,
         edgecolor=color,
         facecolor="white",
+        zorder=2,
     )
     ax.add_patch(box)
     header = FancyBboxPatch(
-        (x, y + height - 0.10),
+        (x, y + height - header_height),
         width,
-        0.10,
-        boxstyle="round,pad=0.012,rounding_size=0.015",
+        header_height,
+        boxstyle="round,pad=0.008,rounding_size=0.012",
         linewidth=0,
         facecolor=color,
+        zorder=3,
     )
     ax.add_patch(header)
-    ax.text(x + width / 2, y + height - 0.05, title, ha="center", va="center", color=title_color, weight="bold")
     ax.text(
-        x + 0.025,
-        y + height - 0.135,
+        x + width / 2,
+        y + height - header_height / 2,
+        title,
+        ha="center",
+        va="center",
+        color=title_color,
+        fontsize=11.2,
+        weight="bold",
+        zorder=4,
+    )
+    ax.text(
+        x + 0.022,
+        y + height - header_height - 0.026,
         "\n".join(lines),
         ha="left",
         va="top",
         color=COLORS["ink"],
-        fontsize=10,
-        linespacing=1.18,
+        fontsize=10.2,
+        linespacing=1.2,
+        zorder=4,
     )
+
+
+def add_flow_arrow(ax, start, end, color=None):
+    ax.annotate(
+        "",
+        xy=end,
+        xytext=start,
+        arrowprops={
+            "arrowstyle": "-|>",
+            "color": color or COLORS["muted"],
+            "lw": 1.7,
+            "mutation_scale": 14,
+            "shrinkA": 0,
+            "shrinkB": 0,
+        },
+        zorder=1,
+    )
+
+
+def add_elbow_arrow(ax, points, color=None):
+    line_color = color or COLORS["muted"]
+    xs, ys = zip(*points[:-1])
+    ax.plot(
+        xs,
+        ys,
+        color=line_color,
+        lw=1.7,
+        solid_capstyle="round",
+        solid_joinstyle="round",
+        zorder=1,
+    )
+    add_flow_arrow(ax, points[-2], points[-1], color=line_color)
 
 
 def build_figure1() -> None:
@@ -164,27 +210,31 @@ def build_figure1() -> None:
 
     add_box(
         ax,
-        (0.05, 0.66),
-        0.25,
-        0.23,
+        (0.035, 0.68),
+        0.27,
+        0.20,
         "Target panel",
-        ["19 pathway genes", "3 GTEx tissues", "57 gene-tissue cells"],
+        ["19 curated pathway genes", "3 GTEx tissues", "57 gene-tissue cells"],
         COLORS["ink"],
     )
     add_box(
         ax,
-        (0.375, 0.66),
-        0.25,
-        0.23,
+        (0.365, 0.68),
+        0.27,
+        0.20,
         "Primary instruments",
-        ["eQTL P < 5e-8; F > 10", "18 instrumented cells", "17 matched to FinnGen"],
+        [
+            r"eQTL $P < 5\times10^{-8}$; $F > 10$",
+            "18 instrumented cells",
+            "17 matched to FinnGen",
+        ],
         COLORS["primary"],
     )
     add_box(
         ax,
-        (0.70, 0.66),
-        0.25,
-        0.23,
+        (0.695, 0.68),
+        0.27,
+        0.20,
         "Primary MR family",
         ["4 FinnGen outcomes", "68 Wald-ratio tests", "BH-FDR across 68"],
         COLORS["protective"],
@@ -192,18 +242,22 @@ def build_figure1() -> None:
 
     add_box(
         ax,
-        (0.14, 0.31),
-        0.31,
-        0.24,
+        (0.365, 0.37),
+        0.27,
+        0.20,
         "Primary result",
-        ["3 FDR-significant rows", "All TYK2 to psoriasis", "Delta sensitivity unchanged"],
+        [
+            "3 FDR-significant rows",
+            "All TYK2-psoriasis",
+            "Delta-method sensitivity unchanged",
+        ],
         COLORS["green"],
     )
     add_box(
         ax,
-        (0.55, 0.31),
-        0.31,
-        0.24,
+        (0.695, 0.37),
+        0.27,
+        0.20,
         "TYK2 validation",
         ["GTEx eQTL rank and FinnGen locus", "8 external GWAS records", "Tissue-resolved colocalization"],
         COLORS["risk"],
@@ -211,25 +265,27 @@ def build_figure1() -> None:
 
     add_box(
         ax,
-        (0.23, 0.035),
-        0.54,
-        0.18,
+        (0.035, 0.07),
+        0.60,
+        0.20,
         "Separate exploratory family",
         [
-            "5 relaxed-only cells (P < 1e-5; F > 10) and 20 tests",
+            r"5 relaxed-only cells ($P < 10^{-5}$; $F > 10$)",
+            "20 separately corrected tests",
             "PDE4A locus-level analysis non-supportive",
         ],
         COLORS["exploratory"],
         title_color=COLORS["ink"],
     )
 
-    arrow = dict(arrowstyle="-|>", color=COLORS["muted"], lw=1.8, mutation_scale=14)
-    ax.annotate("", xy=(0.365, 0.775), xytext=(0.31, 0.775), arrowprops=arrow)
-    ax.annotate("", xy=(0.69, 0.775), xytext=(0.635, 0.775), arrowprops=arrow)
-    ax.annotate("", xy=(0.30, 0.56), xytext=(0.76, 0.655), arrowprops=arrow)
-    ax.annotate("", xy=(0.54, 0.44), xytext=(0.46, 0.44), arrowprops=arrow)
-    ax.plot([0.175, 0.025, 0.025, 0.215], [0.655, 0.655, 0.125, 0.125], color=COLORS["muted"], lw=1.8)
-    ax.annotate("", xy=(0.23, 0.125), xytext=(0.21, 0.125), arrowprops=arrow)
+    add_flow_arrow(ax, (0.315, 0.78), (0.355, 0.78))
+    add_flow_arrow(ax, (0.645, 0.78), (0.685, 0.78))
+    add_elbow_arrow(
+        ax,
+        [(0.83, 0.67), (0.83, 0.62), (0.50, 0.62), (0.50, 0.58)],
+    )
+    add_flow_arrow(ax, (0.645, 0.47), (0.685, 0.47))
+    add_flow_arrow(ax, (0.17, 0.67), (0.17, 0.28))
     save(fig, "figure1_study_design_flowchart")
 
 
