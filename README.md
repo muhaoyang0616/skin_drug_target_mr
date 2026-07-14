@@ -1,5 +1,7 @@
 # Genetic Tractability of Dermatologic Immune Pathway Genes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21331678.svg)](https://doi.org/10.5281/zenodo.21331678)
+
 This repository contains the validated analysis code, machine-readable results,
 figures, and manuscript sources for:
 
@@ -43,10 +45,11 @@ scripts/
 validation/
 ```
 
-The versioned public release is available at:
-`https://github.com/muhaoyang0616/skin_drug_target_mr/releases/tag/v1.0.0`,
-archived on Zenodo at `https://doi.org/10.5281/zenodo.21331678`
-(DOI `10.5281/zenodo.21331678`).
+The versioned public release is available from
+[GitHub v1.0.0](https://github.com/muhaoyang0616/skin_drug_target_mr/releases/tag/v1.0.0)
+and is permanently archived on
+[Zenodo](https://doi.org/10.5281/zenodo.21331678) (DOI:
+`10.5281/zenodo.21331678`).
 
 Raw GTEx and FinnGen files are not redistributed. Their expected relative paths,
 source URLs, byte sizes, and SHA-256 values are documented in
