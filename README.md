@@ -2,6 +2,10 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21331678.svg)](https://doi.org/10.5281/zenodo.21331678)
 
+## Version Scope
+
+> **Important:** The GitHub `v1.0.0` release and its Zenodo record are a frozen reproducibility snapshot. The `main` branch may receive later documentation or non-scientific figure-layout maintenance. The LaTeX files under `manuscript/` are retained as an archived pre-submission source snapshot and do not reproduce the current journal-specific Word manuscript verbatim. Journal-specific title, author metadata, declarations, wording, and formatting are maintained separately. For reproducibility, the validated analysis code, machine-readable results, source provenance, and validation outputs are the authoritative repository materials.
+
 This repository contains the validated analysis code, machine-readable results,
 figures, and manuscript sources for:
 
